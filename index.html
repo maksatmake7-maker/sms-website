@@ -8,6 +8,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
+<script src="i18n.js" defer></script>
 </head>
 <body>
 
@@ -21,11 +22,15 @@
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18" stroke-linecap="round"/></svg>
     </button>
     <nav class="main-nav">
-      <a href="company.html">Компания</a>
-      <a href="courses.html">Учебный центр</a>
-      <a href="resources.html">Ресурсы</a>
-      <a href="solutions.html">Решения</a>
-      <a class="nav-cta" href="courses.html">Пройти обучение</a>
+      <a href="company.html" data-i18n="nav_company">Компания</a>
+      <a href="courses.html" data-i18n="nav_courses">Учебный центр</a>
+      <a href="resources.html" data-i18n="nav_resources">Ресурсы</a>
+      <a href="solutions.html" data-i18n="nav_solutions">Решения</a>
+      <a class="nav-cta" href="courses.html" data-i18n="nav_cta">Пройти обучение</a>
+      <select id="langSwitcher" class="lang-switcher" onchange="applyLanguage(this.value)">
+        <option value="ru">RU</option>
+        <option value="kz">KZ</option>
+      </select>
     </nav>
   </div>
 </header>
@@ -33,18 +38,18 @@
 <section class="hero">
   <div class="wrap hero-grid">
     <div>
-      <div class="hero-eyebrow">Аттестация по требованиям РК</div>
-      <h1>Безопасность на производстве повышается <em>только с повышением уровня знания</em></h1>
-      <p class="lede">Обучение и разработка технических документов с поддержкой ИИ-ассистента 24/7. Говорим на языке ваших специалистов.</p>
+      <div class="hero-eyebrow" data-i18n="hero_eyebrow">Аттестация по требованиям РК</div>
+      <h1 data-i18n="hero_h1">Безопасность на производстве повышается только с повышением уровня знания</h1>
+      <p class="lede" data-i18n="hero_lede">Обучение и разработка технических документов с поддержкой ИИ-ассистента 24/7. Говорим на языке ваших специалистов.</p>
       <div class="hero-stats">
-        <div class="hero-stat"><span class="num">16</span><span class="label">программ обучения</span></div>
-        <div class="hero-stat"><span class="num">04</span><span class="label">доступны сейчас</span></div>
-        <div class="hero-stat"><span class="num">9</span><span class="label">языков на выбор</span></div>
+        <div class="hero-stat"><span class="num" data-i18n="hero_stat1_num">16</span><span class="label" data-i18n="hero_stat1_label">программ обучения</span></div>
+        <div class="hero-stat"><span class="num" data-i18n="hero_stat2_num">04</span><span class="label" data-i18n="hero_stat2_label">доступны сейчас</span></div>
+        <div class="hero-stat"><span class="num" data-i18n="hero_stat3_num">9</span><span class="label" data-i18n="hero_stat3_label">языков на выбор</span></div>
       </div>
     </div>
     <div class="hero-badge">
-      <h3>Говорим на языке ваших специалистов</h3>
-      <p>Материалы, лекции и тестирование доступны на любом из языков ниже</p>
+      <h3 data-i18n="hero_badge_title">Говорим на языке ваших специалистов</h3>
+      <p data-i18n="hero_badge_text">Материалы, лекции и тестирование доступны на любом из языков ниже</p>
       <div class="lang-list">
         <span class="lang-chip">RU</span><span class="lang-chip">KZ</span><span class="lang-chip">UZ</span>
         <span class="lang-chip">KG</span><span class="lang-chip">EN</span><span class="lang-chip">TR</span>
@@ -61,30 +66,30 @@
 
       <a class="section-card" href="company.html">
         <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6" stroke-linejoin="round"/></svg></div>
-        <h3>Компания</h3>
-        <p>О нас, реализованные проекты, галерея, наши преподаватели</p>
-        <span class="go">Перейти →</span>
+        <h3 data-i18n="sec_company_title">Компания</h3>
+        <p data-i18n="sec_company_text">О нас, реализованные проекты, галерея, наши преподаватели</p>
+        <span class="go" data-i18n="go">Перейти →</span>
       </a>
 
       <a class="section-card" href="courses.html">
         <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2L3 6v6c0 5 4 9 9 10 5-1 9-5 9-10V6l-9-4z"/></svg></div>
-        <h3>Учебный центр</h3>
-        <p>16 программ обучения — материалы, лекции, тестирование с ИИ</p>
-        <span class="go">Перейти →</span>
+        <h3 data-i18n="sec_courses_title">Учебный центр</h3>
+        <p data-i18n="sec_courses_text">16 программ обучения — материалы, лекции, тестирование с ИИ</p>
+        <span class="go" data-i18n="go">Перейти →</span>
       </a>
 
       <a class="section-card" href="resources.html">
         <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16v16H4z"/><path d="M8 8h8M8 12h8M8 16h4" stroke-linecap="round"/></svg></div>
-        <h3>Ресурсы</h3>
-        <p>Статьи, советы, инструкции по ТБ, нормативная база, видео</p>
-        <span class="go">Перейти →</span>
+        <h3 data-i18n="sec_resources_title">Ресурсы</h3>
+        <p data-i18n="sec_resources_text">Статьи, советы, инструкции по ТБ, нормативная база, видео</p>
+        <span class="go" data-i18n="go">Перейти →</span>
       </a>
 
       <a class="section-card" href="solutions.html">
         <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l2.5 5 5.5.7-4 3.8 1 5.5-5-2.7-5 2.7 1-5.5-4-3.8 5.5-.7z" stroke-linejoin="round"/></svg></div>
-        <h3>Решения</h3>
-        <p>Декларации, экспертиза и консалтинг по промышленной безопасности</p>
-        <span class="go">Перейти →</span>
+        <h3 data-i18n="sec_solutions_title">Решения</h3>
+        <p data-i18n="sec_solutions_text">Декларации, экспертиза и консалтинг по промышленной безопасности</p>
+        <span class="go" data-i18n="go">Перейти →</span>
       </a>
 
     </div>
@@ -92,17 +97,17 @@
 
   <div class="materials-cta">
     <div>
-      <h3>Ваши риски под личным контролем</h3>
-      <p>Комплексные решения для вашего бизнеса — от обучения персонала до разработки документации под ключ.</p>
+      <h3 data-i18n="materials_cta_title">Ваши риски под личным контролем</h3>
+      <p data-i18n="materials_cta_text">Комплексные решения для вашего бизнеса — от обучения персонала до разработки документации под ключ.</p>
     </div>
-    <a class="btn btn-blue" href="solutions.html" style="background:#F5820A;">Узнать больше</a>
+    <a class="btn btn-blue" href="solutions.html" style="background:#F5820A;" data-i18n="materials_cta_btn">Узнать больше</a>
   </div>
 
 </main>
 
 <footer>
   <div class="wrap">
-    <p>© Safety Management Solution — Учебный центр промышленной безопасности, охраны труда и пожарной безопасности</p>
+    <p data-i18n="footer_copyright">© Safety Management Solution — Учебный центр промышленной безопасности, охраны труда и пожарной безопасности</p>
     <div class="foot-links">
       <a href="company.html">Компания</a>
       <a href="courses.html">Учебный центр</a>
