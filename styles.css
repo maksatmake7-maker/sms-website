@@ -156,7 +156,9 @@ footer .foot-links a:hover { color: var(--blue); }
 /* ---------- testimonials ---------- */
 .testimonial-card { background: var(--cloud); border: 1px solid var(--line); border-radius: 12px; padding: 26px; display: flex; flex-direction: column; gap: 16px; }
 .testimonial-card p.quote { font-family: 'Fraunces', serif; font-size: 15.5px; font-style: italic; color: var(--ink); margin: 0; line-height: 1.5; }
-.testimonial-author { display: flex; flex-direction: column; gap: 2px; }
+.testimonial-author { display: flex; align-items: center; gap: 12px; }
+.testimonial-author .avatar { width: 46px; height: 46px; border-radius: 50%; object-fit: cover; flex-shrink: 0; background: var(--line); }
+.testimonial-author .info { display: flex; flex-direction: column; gap: 2px; }
 .testimonial-author .name { font-weight: 700; font-size: 13.5px; color: var(--ink); }
 .testimonial-author .role { font-size: 12px; color: var(--muted); }
 
