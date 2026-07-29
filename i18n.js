@@ -41,6 +41,8 @@ const SITE_TRANSLATIONS = {
     btn_read: "Читать",
     btn_read_pending: "Читать (материал загружается)",
     btn_listen_pending: "Слушать (материал загружается)",
+    materials_label: "Материалы:",
+    mat_general: "Общая часть",
     btn_soon: "Скоро",
 
     cat1_name: "Промышленная безопасность",
@@ -114,6 +116,8 @@ const SITE_TRANSLATIONS = {
     btn_read: "Оқу",
     btn_read_pending: "Оқу (материал жүктелуде)",
     btn_listen_pending: "Тыңдау (материал жүктелуде)",
+    materials_label: "Материалдар:",
+    mat_general: "Жалпы бөлім",
     btn_soon: "Жақында",
 
     cat1_name: "Өнеркәсіптік қауіпсіздік",
