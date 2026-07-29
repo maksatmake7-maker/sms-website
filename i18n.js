@@ -38,8 +38,9 @@ const SITE_TRANSLATIONS = {
     status_ready: "Доступно",
     status_pending: "Готовится",
     btn_test: "Пройти тест",
-    btn_read: "Читать (материал загружается)",
-    btn_listen: "Слушать (материал загружается)",
+    btn_read: "Читать",
+    btn_read_pending: "Читать (материал загружается)",
+    btn_listen_pending: "Слушать (материал загружается)",
     btn_soon: "Скоро",
 
     cat1_name: "Промышленная безопасность",
@@ -110,8 +111,9 @@ const SITE_TRANSLATIONS = {
     status_ready: "Қолжетімді",
     status_pending: "Дайындалуда",
     btn_test: "Тестілеуден өту",
-    btn_read: "Оқу (материал жүктелуде)",
-    btn_listen: "Тыңдау (материал жүктелуде)",
+    btn_read: "Оқу",
+    btn_read_pending: "Оқу (материал жүктелуде)",
+    btn_listen_pending: "Тыңдау (материал жүктелуде)",
     btn_soon: "Жақында",
 
     cat1_name: "Өнеркәсіптік қауіпсіздік",
