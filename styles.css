@@ -231,6 +231,36 @@ footer .foot-links a:hover { color: var(--blue); }
 .video-card .video-embed iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
 .video-card .video-info { padding: 16px 18px; }
 .video-card h3 { font-size: 13.5px; margin: 0; }
+/* ---------- topbar (phone + hours, all pages) ---------- */
+.topbar { background: var(--ink); color: rgba(255,255,255,0.85); font-size: 12px; padding: 7px 0; }
+.topbar .wrap { display: flex; justify-content: flex-end; gap: 22px; align-items: center; flex-wrap: wrap; }
+.topbar a { color: rgba(255,255,255,0.85); text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 6px; }
+.topbar a:hover { color: #fff; }
+.topbar .hours { display: inline-flex; align-items: center; gap: 6px; }
+.topbar svg { width: 13px; height: 13px; flex-shrink: 0; }
+
+/* ---------- process steps (Как проходит обучение) ---------- */
+.process-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; counter-reset: step; }
+.process-step { background: var(--cloud); border: 1px solid var(--line); border-radius: 12px; padding: 22px 20px; position: relative; }
+.process-step .step-num { font-family: 'Fraunces', serif; font-size: 26px; font-weight: 700; color: var(--orange); display: block; margin-bottom: 10px; }
+.process-step h3 { font-size: 14px; margin: 0 0 6px; }
+.process-step p { font-size: 12.5px; color: var(--muted); margin: 0; line-height: 1.5; }
+
+/* ---------- penalties block (Штрафы за отсутствие обучения) ---------- */
+.penalty-block { background: linear-gradient(160deg, var(--blue) 0%, var(--blue-deep) 100%); border-radius: 16px; padding: 34px; color: #fff; }
+.penalty-block h2 { color: #fff; margin: 0 0 8px; }
+.penalty-block > p { color: rgba(255,255,255,0.75); font-size: 13.5px; max-width: 620px; margin: 0 0 24px; }
+.penalty-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; }
+.penalty-card { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); border-radius: 12px; padding: 20px; }
+.penalty-card .biz-type { font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; color: rgba(255,255,255,0.6); font-weight: 700; margin-bottom: 8px; }
+.penalty-card .amount { font-family: 'Fraunces', serif; font-size: 24px; color: var(--orange); display: block; }
+.penalty-card .tenge { font-size: 12px; color: rgba(255,255,255,0.65); }
+.penalty-source { font-size: 11.5px; color: rgba(255,255,255,0.55); margin-top: 20px; }
+.penalty-source a { color: rgba(255,255,255,0.8); }
+
+/* ---------- document-issued note (course legend area) ---------- */
+.doc-issued-note { display: flex; align-items: center; gap: 10px; background: var(--ready-bg); border-radius: 10px; padding: 12px 18px; font-size: 12.5px; color: var(--ink); margin-top: 16px; }
+.doc-issued-note svg { width: 18px; height: 18px; color: var(--ready); flex-shrink: 0; }
 .footer-contacts { display: flex; gap: 18px; flex-wrap: wrap; font-size: 12.5px; color: var(--muted); }
 .footer-contacts a { color: var(--muted); text-decoration: none; font-weight: 600; }
 .footer-contacts a:hover { color: var(--blue); }
