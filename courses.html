@@ -3,12 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Учебный центр — Safety Management Solution</title>
+<title>Ресурсы — Safety Management Solution</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
-<script src="i18n.js" defer></script>
 </head>
 <body>
 
@@ -22,244 +21,202 @@
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18" stroke-linecap="round"/></svg>
     </button>
     <nav class="main-nav">
-      <a href="company.html" data-i18n="nav_company">Компания</a>
-      <a href="courses.html" class="active" data-i18n="nav_courses">Учебный центр</a>
-      <a href="resources.html" data-i18n="nav_resources">Ресурсы</a>
-      <a href="solutions.html" data-i18n="nav_solutions">Решения</a>
-      <a class="nav-cta" href="courses.html" data-i18n="nav_cta">Пройти обучение</a>
-      <select id="langSwitcher" class="lang-switcher" onchange="applyLanguage(this.value)">
-        <option value="ru">RU</option>
-        <option value="kz">KZ</option>
-      </select>
+      <a href="company.html">Компания</a>
+      <a href="courses.html">Учебный центр</a>
+      <a href="resources.html" class="active">Ресурсы</a>
+      <a href="solutions.html">Решения</a>
+      <a class="nav-cta" href="courses.html">Пройти обучение</a>
     </nav>
   </div>
 </header>
 
 <section class="page-hero">
   <div class="wrap">
-    <div class="breadcrumb"><a href="index.html">Главная</a> / Учебный центр</div>
-    <h1 data-i18n="courses_page_title">Учебный центр</h1>
-    <p data-i18n="courses_page_lede">16 программ подготовки, лекции и тестирование с ИИ-поддержкой — по промышленной безопасности, охране труда, пожарной безопасности и допускам к специальным видам работ.</p>
+    <div class="breadcrumb"><a href="index.html">Главная</a> / Ресурсы</div>
+    <h1>Ресурсы</h1>
+    <p>Статьи, советы, инструкции и нормативная база по промышленной, трудовой и пожарной безопасности.</p>
   </div>
 </section>
 
-<main class="wrap" id="catalog">
+<main class="wrap">
 
-  <div class="legend">
-    <div class="legend-item"><span class="dot ready"></span><span data-i18n="legend_ready">Материалы и тестирование доступны</span></div>
-    <div class="legend-item"><span class="dot pending"></span><span data-i18n="legend_pending">Программа готовится</span></div>
-  </div>
-
-  <!-- ==================== ПРОМЫШЛЕННАЯ БЕЗОПАСНОСТЬ ==================== -->
-  <div class="category">
-    <div class="category-head">
-      <div class="category-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2L3 6v6c0 5 4 9 9 10 5-1 9-5 9-10V6l-9-4z"/><path d="M9 12l2 2 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-      <h2 data-i18n="cat1_name">Промышленная безопасность</h2><span class="count">5 программ</span>
-    </div>
-    <p class="category-desc" data-i18n="cat1_desc">Подготовка руководителей, ИТР и персонала опасных производственных объектов</p>
-    <div class="course-grid">
-
-      <div class="course-card is-ready">
-        <span class="status-badge ready" data-i18n="status_ready">Доступно</span>
-        <p class="course-title" data-i18n="course1_title">Подготовка технических руководителей, ИТР и специалистов по вопросам промышленной безопасности</p>
-        <span class="course-hours" data-i18n="course1_hours">40-часовая программа</span>
-        <div class="course-actions">
-          <a class="btn btn-blue" href="https://cute-pithivier-b7ec21.netlify.app/?startTest=promyshlennaya_bezopasnost_itr" target="_blank" data-i18n="btn_test">Пройти тест</a>
-          <span class="btn btn-disabled" title="Появится, как только пришлёте текст-сценарий для озвучки" data-i18n="btn_listen_pending">Слушать (материал загружается)</span>
-        </div>
-        <div class="course-materials-list">
-          <span data-i18n="materials_label">Материалы:</span>
-          <a href="materials/trebovaniya-promyshlennoy-bezopasnosti-obshaya.pdf" target="_blank" data-i18n="mat_general">Общая часть</a>
-          <a href="materials/postateynaya-chast-1.pdf" target="_blank">· 1</a>
-          <a href="materials/postateynaya-chast-2.pdf" target="_blank">· 2</a>
-          <a href="materials/postateynaya-chast-3.pdf" target="_blank">· 3</a>
-          <a href="materials/postateynaya-chast-4.pdf" target="_blank">· 4</a>
-          <a href="materials/Ucebnoe-pjsobie-prombez-SMS.pdf" target="_blank">· Учебное пособие СМС</a>
-        </div>
-      </div>
-
-      <div class="course-card is-ready">
-        <span class="status-badge ready" data-i18n="status_ready">Доступно</span>
-        <p class="course-title" data-i18n="course2_title">Подготовка персонала по вопросам промышленной безопасности</p>
-        <span class="course-hours" data-i18n="course2_hours">10-часовая программа</span>
-        <div class="course-actions">
-          <a class="btn btn-blue" href="https://cute-pithivier-b7ec21.netlify.app/?startTest=promyshlennaya_bezopasnost" target="_blank" data-i18n="btn_test">Пройти тест</a>
-          <span class="btn btn-disabled" title="Появится, как только пришлёте текст-сценарий для озвучки" data-i18n="btn_listen_pending">Слушать (материал загружается)</span>
-        </div>
-        <div class="course-materials-list">
-          <span data-i18n="materials_label">Материалы:</span>
-          <a href="materials/trebovaniya-promyshlennoy-bezopasnosti-obshaya.pdf" target="_blank" data-i18n="mat_general">Общая часть</a>
-          <a href="materials/postateynaya-chast-1.pdf" target="_blank">· 1</a>
-          <a href="materials/postateynaya-chast-2.pdf" target="_blank">· 2</a>
-          <a href="materials/postateynaya-chast-3.pdf" target="_blank">· 3</a>
-          <a href="materials/postateynaya-chast-4.pdf" target="_blank">· 4</a>
-          <a href="materials/Ucebnoe-pjsobie-prombez-SMS.pdf" target="_blank">· Учебное пособие СМС</a>
-        </div>
-      </div>
-
-      <div class="course-card is-ready">
-        <span class="status-badge ready" data-i18n="status_ready">Доступно</span>
-        <p class="course-title" data-i18n="course3_title">Подготовка и переподготовка ИТР опасных производственных объектов по приёму, учёту, хранению и использованию прекурсоров</p>
-        <div class="course-actions"><a class="btn btn-blue" href="https://cute-pithivier-b7ec21.netlify.app/?startTest=prekursory" target="_blank" data-i18n="btn_test">Пройти тест</a></div>
-        <div class="course-materials-list">
-          <span data-i18n="materials_label">Материалы:</span>
-          <a href="materials/Prekursory%20obshaya-SMS-1-299.pdf" target="_blank" data-i18n="btn_read">Читать</a>
-          <a href="materials/Prekursory%20obshaya-SMS-300-687.pdf" target="_blank">· 2</a>
-        </div>
-      </div>
-
-      <div class="course-card">
-        <span class="status-badge pending" data-i18n="status_pending">Готовится</span>
-        <p class="course-title" data-i18n="course4_title">Подготовка и переподготовка ИТР опасных производственных объектов по приёму, учёту, хранению и использованию СДЯВ</p>
-        <div class="course-actions"><span class="btn btn-disabled" data-i18n="btn_soon">Скоро</span></div>
-      </div>
-
-      <div class="course-card">
-        <span class="status-badge pending" data-i18n="status_pending">Готовится</span>
-        <p class="course-title" data-i18n="course5_title">Требования промышленной безопасности при эксплуатации стационарных, контейнерных и передвижных АЗС</p>
-        <div class="course-actions"><span class="btn btn-disabled" data-i18n="btn_soon">Скоро</span></div>
-      </div>
-
+  <div class="content-section">
+    <div class="content-section-head"><h2>Вопросы — ответы</h2></div>
+    <div class="placeholder-card">
+      <span class="tag">Содержание уточняется</span>
+      <h3>Часто задаваемые вопросы</h3>
+      <p>Пришлите список вопросов и ответов — оформлю в удобном раскрывающемся виде.</p>
     </div>
   </div>
 
-  <!-- ==================== ОХРАНА ТРУДА ==================== -->
-  <div class="category">
-    <div class="category-head">
-      <div class="category-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s7-4.5 7-11V5l-7-3-7 3v5c0 6.5 7 11 7 11z" stroke-linejoin="round"/></svg></div>
-      <h2 data-i18n="cat2_name">Безопасность и охрана труда</h2><span class="count">3 программы</span>
-    </div>
-    <p class="category-desc" data-i18n="cat2_desc">Трудовое законодательство, права и обязанности на производстве</p>
-    <div class="course-grid">
-
-      <div class="course-card">
-        <span class="status-badge pending" data-i18n="status_pending">Готовится</span>
-        <p class="course-title" data-i18n="course6_title">Подготовка руководителей и ответственных лиц по вопросам безопасности и охраны труда</p>
-        <div class="course-actions"><span class="btn btn-disabled" data-i18n="btn_soon">Скоро</span></div>
+  <div class="content-section">
+    <div class="content-section-head"><h2>Статьи по безопасности</h2></div>
+    <div class="placeholder-grid">
+      <div class="article-card">
+        <h3>Уровень производственного травматизма в Казахстане снизился на четверть</h3>
+        <p>Эксперты связывают снижение с курсом на «нулевую терпимость» к травматизму, но отмечают, что слабая культура охраны труда и износ оборудования по-прежнему остаются главными факторами риска — особенно там, где не проводится анализ безопасности перед работами повышенной опасности.</p>
+        <div class="article-meta"><span>24.kz</span><span>8 июня 2026</span></div>
+        <a class="read-more" href="https://24.kz/ru/news/social/773221-uroven-proizvodstvennogo-travmatizma-sokratilsya-na-25" target="_blank">Читать статью →</a>
       </div>
-
-      <div class="course-card is-ready">
-        <span class="status-badge ready" data-i18n="status_ready">Доступно</span>
-        <p class="course-title" data-i18n="course7_title">Подготовка работников по вопросам безопасности и охраны труда</p>
-        <div class="course-actions">
-          <a class="btn btn-blue" href="https://cute-pithivier-b7ec21.netlify.app/?startTest=biot_rabotniki" target="_blank" data-i18n="btn_test">Пройти тест</a>
-          <a class="btn btn-ghost" href="materials/Ohrana%20truda-SMS.pdf" target="_blank" data-i18n="btn_read">Читать</a>
-          <span class="btn btn-disabled" title="Появится, как только пришлёте текст-сценарий для озвучки" data-i18n="btn_listen_pending">Слушать (материал загружается)</span>
-        </div>
+      <div class="article-card">
+        <h3>Всемирный день охраны труда: где в Казахстане сохраняются самые высокие риски</h3>
+        <p>Наибольшие риски травматизма остаются в промышленных регионах — Карагандинской, Улытауской и Восточно-Казахстанской областях, а среди отраслей лидируют обрабатывающая и горнодобывающая промышленность. В апреле в Астане прошла международная конференция KIOSH-2026, посвящённая диалогу государства и бизнеса в области охраны труда.</p>
+        <div class="article-meta"><span>Азаттык Рухы</span><span>28 апреля 2026</span></div>
+        <a class="read-more" href="https://rus.azattyq-ruhy.kz/news/107534-vsemirnyi-den-okhrany-truda-uroven-travmatizma-na-proizvodstve-v-kazakhstane-sokratilsia" target="_blank">Читать статью →</a>
       </div>
-
-      <div class="course-card">
-        <span class="status-badge pending" data-i18n="status_pending">Готовится</span>
-        <p class="course-title" data-i18n="course8_title">Применение трудового законодательства РК, ведение переговоров и достижение консенсуса в трудовых спорах</p>
-        <div class="course-actions"><span class="btn btn-disabled" data-i18n="btn_soon">Скоро</span></div>
+      <div class="article-card">
+        <h3>Безопасный труд по-казахстански: миллионы работают в «зоне риска»</h3>
+        <p>Критический разбор того, как «Концепция безопасного труда до 2030 года», принятая в 2023 году, на практике пока остаётся скорее декларацией: официальная система контроля учитывает лишь традиционно признанные вредные факторы, оставляя за скобками часть реальных рисков на производстве.</p>
+        <div class="article-meta"><span>Eurasia24</span><span>6 мая 2026</span></div>
+        <a class="read-more" href="https://eurasia24.media/eksklyuziv/bezopasnyj-trud-po-kazahstanski-milliony-lyudej-rabotayut-v-zone-riska/" target="_blank">Читать статью →</a>
       </div>
-
     </div>
   </div>
 
-  <!-- ==================== ПОЖАРНАЯ БЕЗОПАСНОСТЬ ==================== -->
-  <div class="category">
-    <div class="category-head">
-      <div class="category-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2c1 3-2 4-2 7a4 4 0 108 0c0-1.5-1-2.5-1-2.5.5 2-.5 3-1.5 3C17 8 15 6 15 3.5c0 1-1 1.5-1 3 0-2-2-2.5-2-4.5z"/><path d="M8 15a4 4 0 108 0c0-1-.5-2-1-2.5.3 1.3-.5 2-1.5 2 .5-1-.5-1.5-.5-2.5-1 1-3 1-3 3z" stroke-linejoin="round"/></svg></div>
-      <h2 data-i18n="cat3_name">Пожарная безопасность</h2><span class="count">1 программа</span>
-    </div>
-    <p class="category-desc" data-i18n="cat3_desc">Пожарно-технический минимум для руководителей и ответственных лиц</p>
-    <div class="course-grid">
-
-      <div class="course-card is-ready">
-        <span class="status-badge ready" data-i18n="status_ready">Доступно</span>
-        <p class="course-title" data-i18n="course9_title">Подготовка руководителей и ответственных лиц по пожарной безопасности в объёме пожарно-технического минимума</p>
-        <div class="course-actions">
-          <a class="btn btn-blue" href="https://cute-pithivier-b7ec21.netlify.app/?startTest=pozharno_tehnicheskiy_minimum" target="_blank" data-i18n="btn_test">Пройти тест</a>
-          <a class="btn btn-ghost" href="materials/Ucebnoe-posobie-PTM-SMS-rus.pdf" target="_blank" data-i18n="btn_read">Читать</a>
-          <span class="btn btn-disabled" title="Появится, как только пришлёте текст-сценарий для озвучки" data-i18n="btn_listen_pending">Слушать (материал загружается)</span>
-        </div>
-        <div class="course-materials-list">
-          <span data-i18n="materials_label">Материалы:</span>
-          <a href="materials/Ucebnoe-posobie-PTM-SMS-rus.pdf" target="_blank">кратко (рус)</a>
-          <a href="materials/Ucebnoe-posobie-PTM-SMS-kaz.pdf" target="_blank">· кратко (қаз)</a>
-          <a href="materials/Ptm-SMS-rus-full-1-89.pdf" target="_blank">· полная (рус) 1</a>
-          <a href="materials/Ptm-SMS-rus-full-90-183.pdf" target="_blank">· 2</a>
-          <a href="materials/Ptm-SMS-kaz-short-1-89.pdf" target="_blank">· полная (қаз) 1</a>
-          <a href="materials/Ptm-SMS-kaz-short-90-183.pdf" target="_blank">· 2</a>
-        </div>
+  <div class="content-section">
+    <div class="content-section-head"><h2>Хроника происшествий</h2></div>
+    <p class="section-note">Реальные случаи из Казахстана — обновляется вручную. Хотите автоматическое обновление? Это можно подключить через бэкенд отдельным проектом.</p>
+    <div class="placeholder-grid">
+      <div class="incident-card">
+        <span class="incident-date">27–28 июля 2026 · Уральск, ЗКО</span>
+        <h3>Пожар на городском полигоне ТБО, введён режим ЧС</h3>
+        <p>Возгорание на свалке началось 27 июля около 14:30 из-за аномальной жары и сильного ветра. Огонь охватил около 13 га из 35 га полигона. 28 июля акимат Уральска ввёл режим чрезвычайной ситуации местного уровня — для оперативного обеспечения техники топливом. На тушении работали 40–50 единиц техники.</p>
+        <span class="incident-casualties none">Пострадавших нет</span>
+        <a class="source-link" href="https://www.zakon.kz/obshestvo/6526219-pozhar-na-poligone-stal-prichinoy-vvedeniya-rezhima-chs-v-uralske.html" target="_blank">Источник: zakon.kz</a>
       </div>
-
+      <div class="incident-card">
+        <span class="incident-date">23 июля 2026 · Каскелен, Алматинская обл.</span>
+        <h3>Пожар в цехе по производству матрасов</h3>
+        <p>Загорелись бывшие в употреблении вещи, матрасы и производственный станок внутри цеха. Спасатели быстро локализовали огонь и не допустили его распространения на остальную часть здания площадью более 2800 м² — там же находятся офисы, магазин и общежитие для сотрудников.</p>
+        <span class="incident-casualties none">Пострадавших нет</span>
+        <a class="source-link" href="https://kazlenta.kz/117861-proizvodstvennyy-ceh-gorel-v-almatinskoy-oblasti.html" target="_blank">Источник: kazlenta.kz</a>
+      </div>
+      <div class="incident-card">
+        <span class="incident-date">5 мая 2026 · Усть-Каменогорск, ВКО</span>
+        <h3>Взрыв и пожар на свинцовом заводе ТОО «Казцинк»</h3>
+        <p>В плавильном отделении электролизного цеха произошёл хлопок пылеулавливающего устройства с последующим возгоранием и частичным обрушением конструкций (площадь обрушения — 220 м², площадь пожара — 120 м²). На месте работали 40 спасателей и 10 единиц техники МЧС.</p>
+        <span class="incident-casualties some">Погибли 2 человека, пострадали 5</span>
+        <a class="source-link" href="https://ru.sputnik.kz/20260505/avariya-i-pozhar-na-kaztsinke-pogibli-dva-sotrudnika--63187417.html" target="_blank">Источник: Sputnik Казахстан</a>
+      </div>
     </div>
   </div>
 
-  <!-- ==================== ДОПУСКИ К СПЕЦИАЛЬНЫМ ВИДАМ РАБОТ ==================== -->
-  <div class="category">
-    <div class="category-head">
-      <div class="category-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14.7 6.3a4 4 0 10-5.4 5.4L3 18v3h3l6.3-6.3a4 4 0 005.4-5.4z" stroke-linejoin="round"/></svg></div>
-      <h2 data-i18n="cat4_name">Допуски к специальным видам работ</h2><span class="count">7 программ</span>
-    </div>
-    <p class="category-desc" data-i18n="cat4_desc">Отдельные допуски для конкретного оборудования и видов работ</p>
-    <div class="course-grid">
-
-      <div class="course-card">
-        <span class="status-badge pending" data-i18n="status_pending">Готовится</span>
-        <p class="course-title" data-i18n="course10_title">Обучение стропальщиков</p>
-        <div class="course-actions"><span class="btn btn-disabled" title="Тестирование пока не готово" data-i18n="btn_soon">Скоро</span></div>
-        <div class="course-materials-list">
-          <span data-i18n="materials_label">Материалы:</span>
-          <a href="materials/Stpalshik.pdf" target="_blank" data-i18n="btn_read">Читать</a>
-        </div>
+  <div class="content-section">
+    <div class="content-section-head"><h2>Инструкции по ТБ</h2></div>
+    <p class="section-note">Действующие типовые инструкции из проверенных источников. Для инструкции, адаптированной под конкретное предприятие — обратитесь к нам напрямую.</p>
+    <div class="placeholder-grid">
+      <div class="instruction-card">
+        <h3>Типовая инструкция по охране труда для стропальщиков (ТИ Р М-007-2000)</h3>
+        <p>Базовый документ, на который опираются программы подготовки стропальщиков: строповка груза, сигналы крановщику, работа в опасной зоне.</p>
+        <a class="read-more" href="https://ohranatruda.ru/ot_biblio/norma/248096/" target="_blank">Читать инструкцию →</a>
       </div>
-
-      <div class="course-card">
-        <span class="status-badge pending" data-i18n="status_pending">Готовится</span>
-        <p class="course-title" data-i18n="course11_title">Безопасность работ на высоте</p>
-        <div class="course-actions"><span class="btn btn-disabled" data-i18n="btn_soon">Скоро</span></div>
+      <div class="instruction-card">
+        <h3>Инструкция по охране труда для машинистов (крановщиков) электрических мостовых кранов</h3>
+        <p>Приёмка крана перед сменой, осмотр механизмов, тормозов и электрооборудования, порядок действий при работе.</p>
+        <a class="read-more" href="http://aquagroup.ru/normdocs/2302" target="_blank">Читать инструкцию →</a>
       </div>
-
-      <div class="course-card">
-        <span class="status-badge pending" data-i18n="status_pending">Готовится</span>
-        <p class="course-title" data-i18n="course12_title">Подготовка операторов котельной</p>
-        <div class="course-actions"><span class="btn btn-disabled" data-i18n="btn_soon">Скоро</span></div>
+      <div class="instruction-card">
+        <h3>Сборник типовых инструкций по охране труда для АЗС</h3>
+        <p>Инструкции для операторов АЗС, работы в насосных станциях и при обслуживании технологических колодцев и трубопроводов нефтепродуктообеспечения.</p>
+        <a class="read-more" href="https://www.azsk74.kz/upload/iblock/aae/sbornik-tipovykh-instruktsiy-po-okhrane-truda-dlya-azs-na-osnove-toi-r-112_12_95-_pdf.io_.pdf" target="_blank">Скачать сборник →</a>
       </div>
-
-      <div class="course-card">
-        <span class="status-badge pending" data-i18n="status_pending">Готовится</span>
-        <p class="course-title" data-i18n="course13_title">Подготовка лиц, ответственных за газовое хозяйство</p>
-        <div class="course-actions"><span class="btn btn-disabled" title="Тестирование пока не готово" data-i18n="btn_soon">Скоро</span></div>
-        <div class="course-materials-list">
-          <span data-i18n="materials_label">Материалы:</span>
-          <a href="materials/Ucebnoe-posobie-SMS-gazhoz-rus.pdf" target="_blank">рус</a>
-          <a href="materials/Ucebnoe-posobie-SMS-gazhoz-kaz.pdf" target="_blank">· қаз</a>
-        </div>
-      </div>
-
-      <div class="course-card">
-        <span class="status-badge pending" data-i18n="status_pending">Готовится</span>
-        <p class="course-title" data-i18n="course14_title">ИТР, ответственные за безопасную эксплуатацию грузоподъёмных механизмов</p>
-        <div class="course-actions"><span class="btn btn-disabled" data-i18n="btn_soon">Скоро</span></div>
-      </div>
-
-      <div class="course-card">
-        <span class="status-badge pending" data-i18n="status_pending">Готовится</span>
-        <p class="course-title" data-i18n="course15_title">ИТР, ответственные за безопасную эксплуатацию сосудов, работающих под давлением</p>
-        <div class="course-actions"><span class="btn btn-disabled" data-i18n="btn_soon">Скоро</span></div>
-      </div>
-
-      <div class="course-card">
-        <span class="status-badge pending" data-i18n="status_pending">Готовится</span>
-        <p class="course-title" data-i18n="course16_title">Право безопасной эксплуатации автоклавов (паровых стерилизаторов)</p>
-        <div class="course-actions"><span class="btn btn-disabled" title="Тестирование пока не готово" data-i18n="btn_soon">Скоро</span></div>
-        <div class="course-materials-list">
-          <span data-i18n="materials_label">Материалы:</span>
-          <a href="materials/Avtoclav-rus-SMS.pdf" target="_blank">рус</a>
-          <a href="materials/Avtoclav-kaz-SMS.pdf" target="_blank">· қаз</a>
-        </div>
-      </div>
-
     </div>
   </div>
 
-  <div class="materials-cta" id="materials">
-    <div>
-      <h3 data-i18n="materials_missing_title">Материалы курсов пока не загружены</h3>
-      <p data-i18n="materials_missing_text">Как только пришлёте PDF/текстовые материалы по каждому курсу — здесь появится раздел с их предпросмотром и скачиванием, привязанный к соответствующему курсу.</p>
+  <div class="content-section">
+    <div class="content-section-head"><h2>Нормативная база</h2></div>
+    <div class="norm-lead">
+      <div>
+        <h3>Всегда актуальная версия — напрямую с Adilet.kz</h3>
+        <p>Ссылки ведут на информационно-правовую систему «Әділет» — тексты законов там обновляются сразу при внесении изменений, поэтому вы всегда видите действующую редакцию.</p>
+      </div>
+      <a href="https://adilet.zan.kz/rus/docs/Z1400000188" target="_blank">Закон «О гражданской защите» →</a>
+    </div>
+    <div class="norm-grid">
+      <div class="norm-category">
+        <h3>Промышленная безопасность</h3>
+        <ul>
+          <li><a href="https://adilet.zan.kz/rus/docs/P2400000651" target="_blank">Концепция промышленной безопасности РК на 2024–2030 годы<span class="doc-meta">Adilet.kz</span></a></li>
+          <li><a href="https://adilet.zan.kz/rus/docs/V1400010250" target="_blank">Правила обеспечения промышленной безопасности для ОПО нефтяной и газовой отраслей<span class="doc-meta">Adilet.kz</span></a></li>
+        </ul>
+        <ul class="norm-pending-list">
+          <li>Правила обеспечения промышленной безопасности для ОПО химической отрасли</li>
+          <li>...по производству расплавленных металлов</li>
+          <li>...при обращении с источниками ионизирующего излучения</li>
+          <li>...при эксплуатации компрессорных станций</li>
+          <li>...при эксплуатации грузоподъёмных механизмов</li>
+          <li>...при производстве фтористоводородной кислоты</li>
+          <li>...при эксплуатации магистральных трубопроводов</li>
+          <li>...при геологоразведке, добыче и переработке урана</li>
+          <li>...для хвостовых и шламовых хозяйств ОПО</li>
+          <li>...при эксплуатации и ремонте резервуаров для нефти и нефтепродуктов</li>
+          <li>...для ОПО, ведущих работы по переработке (уточняется полное название)</li>
+          <li>...для ОПО угольных шахт</li>
+          <li>...при эксплуатации оборудования, работающего под давлением</li>
+          <li>...при производстве бериллия, его соединений и изделий из них</li>
+          <li>...для ОПО в нефтехимической, нефтеперерабатывающей отраслях, нефтебаз и АЗС</li>
+          <li>...для ОПО, осуществляющих нефтяные операции на море</li>
+          <li>...для ОПО по хранению и переработке растительного сырья</li>
+          <li>...для ОПО по подготовке и переработке газов</li>
+          <li>...для ОПО, ведущих взрывные работы и работы со взрывчатыми материалами</li>
+          <li>Критерии отнесения ОПО к декларируемым</li>
+          <li>Правила идентификации опасных производственных объектов</li>
+          <li>Правила сдачи экзаменов руководителями юрлиц, декларирующих промбезопасность, и членами ПДЭК</li>
+          <li>Правила определения общего уровня опасности ОПО</li>
+          <li>Правила подготовки, переподготовки и проверки знаний специалистов и работников в области промышленной безопасности</li>
+        </ul>
+      </div>
+      <div class="norm-category">
+        <h3>Безопасность и охрана труда</h3>
+        <ul>
+          <li><a href="https://adilet.zan.kz/rus/docs/K1500000414" target="_blank">Трудовой кодекс РК — глава по безопасности и охране труда<span class="doc-meta">Adilet.kz</span></a></li>
+          <li><a href="https://adilet.zan.kz/rus/docs/V1500012665" target="_blank">Правила и сроки обучения, инструктирования и проверки знаний по безопасности и охране труда (Приказ №1019)<span class="doc-meta">Adilet.kz</span></a></li>
+          <li><a href="https://adilet.zan.kz/rus/docs/P2300001182" target="_blank">Концепция безопасного труда РК на 2024–2030 годы<span class="doc-meta">Adilet.kz</span></a></li>
+          <li><a href="https://adilet.zan.kz/rus/docs/G24G0000490" target="_blank">Профессиональный стандарт «Безопасность и охрана труда»<span class="doc-meta">Adilet.kz</span></a></li>
+        </ul>
+      </div>
+      <div class="norm-category">
+        <h3>Пожарная безопасность</h3>
+        <ul>
+          <li><a href="https://adilet.zan.kz/rus/docs/V2200026867" target="_blank">Правила пожарной безопасности (Приказ МЧС РК №55)<span class="doc-meta">Adilet.kz</span></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="content-section">
+    <div class="content-section-head"><h2>История возникновения промышленной безопасности</h2></div>
+    <div class="history-article">
+      <p>Идея, что фабрику нужно защищать от неё самой, появилась внезапно — и не там, где её ожидаешь. В 1802 году английский парламент принял закон «О здоровье и нравственности учеников» (Health and Morals of Apprentices Act) — первый в мире государственный акт, регулирующий условия труда на производстве. Его автором был не инженер и не врач, а сам крупный фабрикант — сэр Роберт Пиль-старший.</p>
+      <div class="history-callout"><strong>Интересный факт:</strong> толчком к закону послужила эпидемия среди детей на текстильных фабриках Пиля — некоторых нанимали работать с 4–8 лет, привязывая к тележкам в узких проходах. Закон обязал фабрики иметь достаточную вентиляцию и окна, дважды в год белить стены известью, а детский труд ограничил 12 часами в сутки без ночных смен — сегодня это звучит как минимум, но два века назад это была революция.</div>
+      <p>В Российской империи, частью которой был и Казахстан, первый специальный надзор за безопасностью труда возник в горном деле — так называемая «горная полиция». Полноценное фабричное законодательство появилось позже: в 1886 году — закон «О мерах для охраны жизни и здоровья рабочих», а в 1899 году были изданы новые правила надзора за фабриками и горными заводами.</p>
+      <p>Само понятие «промышленная безопасность» как отдельная от общей охраны труда правовая категория — на удивление молодое: оно оформилось только в 1990-е годы, когда стало ясно, что аварии на опасных производственных объектах (шахты, химические заводы, магистральные трубопроводы) требуют отдельного, более строгого регулирования, чем обычные вопросы условий труда в офисе или цехе.</p>
+      <p>В независимом Казахстане путь профильного госоргана был извилистым — по сути, полный круг длиной более 20 лет:</p>
+      <ul class="history-timeline">
+        <li><span class="year">1997</span><span class="desc">— Указом Президента РК от 22 апреля создан Государственный комитет РК по чрезвычайным ситуациям. Ему передают Государственную противопожарную службу из состава МВД.</span></li>
+        <li><span class="year">1997–2014</span><span class="desc">— Госкомитет преобразуется сначала в Агентство РК по чрезвычайным ситуациям, а затем — в полноценное Министерство по чрезвычайным ситуациям РК.</span></li>
+        <li><span class="year">2014</span><span class="desc">— 6 августа МЧС РК упраздняется: функции по ЧС и пожарной безопасности передаются в МВД (Комитет по чрезвычайным ситуациям), а промышленная безопасность и госрезерв уходят в экономические министерства — там появляется Комитет индустриального развития и промышленной безопасности.</span></li>
+        <li><span class="year">2020</span><span class="desc">— 9 сентября Указом Президента №408 Министерство по чрезвычайным ситуациям РК образовано заново, и впервые в его состав вместе с функциями МВД по ЧС и пожарной безопасности входит промышленная безопасность из Министерства индустрии. Так возникает нынешний Комитет промышленной безопасности МЧС РК — тот самый орган, что сегодня выдаёт аттестаты учебным центрам вроде нашего.</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="content-section">
+    <div class="content-section-head"><h2>Видео</h2></div>
+    <p class="section-note">Официальные учебные ролики ФГБУ «ВНИИ труда» — показывают типичные нарушения и опасности без травмирующих сцен.</p>
+    <div class="video-grid">
+      <div class="video-card">
+        <div class="video-embed"><iframe src="https://www.youtube.com/embed/_fz2zWitTyg" title="Охрана труда при работе с инструментом и приспособлениями" allowfullscreen></iframe></div>
+        <div class="video-info"><h3>Охрана труда при работе с инструментом и приспособлениями</h3></div>
+      </div>
+      <div class="video-card">
+        <div class="video-embed"><iframe src="https://www.youtube.com/embed/HZacjnjOF6c" title="Охрана труда при работе на высоте" allowfullscreen></iframe></div>
+        <div class="video-info"><h3>Охрана труда при работе на высоте</h3></div>
+      </div>
+      <div class="video-card">
+        <div class="video-embed"><iframe src="https://www.youtube.com/embed/ZJYRv_DqZbQ" title="Охрана труда при эксплуатации промышленного транспорта" allowfullscreen></iframe></div>
+        <div class="video-info"><h3>Охрана труда при эксплуатации промышленного транспорта</h3></div>
+      </div>
     </div>
   </div>
 
@@ -267,7 +224,7 @@
 
 <footer>
   <div class="wrap">
-    <p data-i18n="footer_copyright">© Safety Management Solution — Учебный центр промышленной безопасности, охраны труда и пожарной безопасности</p>
+    <p>© Safety Management Solution — Учебный центр промышленной безопасности, охраны труда и пожарной безопасности</p>
     <div class="foot-links">
       <a href="company.html">Компания</a>
       <a href="courses.html">Учебный центр</a>
