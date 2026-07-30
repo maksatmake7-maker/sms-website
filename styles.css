@@ -1,237 +1,248 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ресурсы — Safety Management Solution</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
-</head>
-<body>
+/* ============================================================
+   Safety Management Solution — общий стиль сайта
+   Один файл на все страницы: index, courses, company, resources, solutions
+   ============================================================ */
 
-<header>
-  <div class="wrap">
-    <a class="brand" href="index.html">
-      <img class="brand-mark" src="logo.jpg" alt="Safety Management Solution">
-      <span class="brand-name">Safety Management<br>Solution</span>
-    </a>
-    <button class="burger" onclick="document.querySelector('nav.main-nav').classList.toggle('open')" aria-label="Меню">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18" stroke-linecap="round"/></svg>
-    </button>
-    <nav class="main-nav">
-      <a href="company.html">Компания</a>
-      <a href="courses.html">Учебный центр</a>
-      <a href="resources.html" class="active">Ресурсы</a>
-      <a href="solutions.html">Решения</a>
-      <a class="nav-cta" href="courses.html">Пройти обучение</a>
-    </nav>
-  </div>
-</header>
+:root {
+  --blue: #1E30D8;
+  --blue-deep: #131F99;
+  --orange: #F5820A;
+  --orange-soft: #FFEAD1;
+  --ink: #171B2E;
+  --muted: #6A7086;
+  --line: #E7E8F0;
+  --paper: #FFFFFF;
+  --cloud: #F5F6FB;
+  --ready: #1C9A5B;
+  --ready-bg: #E4F7ED;
+  --pending: #E07A1C;
+  --pending-bg: #FEF1E2;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--paper); color: var(--ink); font-family: 'Manrope', sans-serif; line-height: 1.55; }
+h1, h2, h3, .display { font-family: 'Fraunces', serif; font-weight: 700; letter-spacing: -0.01em; }
+a { color: inherit; }
+.wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+::selection { background: var(--orange-soft); }
 
-<section class="page-hero">
-  <div class="wrap">
-    <div class="breadcrumb"><a href="index.html">Главная</a> / Ресурсы</div>
-    <h1>Ресурсы</h1>
-    <p>Статьи, советы, инструкции и нормативная база по промышленной, трудовой и пожарной безопасности.</p>
-  </div>
-</section>
+/* ---------- header / nav ---------- */
+header { border-bottom: 1px solid var(--line); padding: 16px 0; position: sticky; top: 0; background: rgba(255,255,255,0.94); backdrop-filter: blur(10px); z-index: 30; }
+header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+.brand-mark { width: 38px; height: 38px; flex-shrink: 0; object-fit: contain; }
+.brand-name { font-family: 'Fraunces', serif; font-size: 14.5px; font-weight: 700; line-height: 1.2; color: var(--ink); }
 
-<main class="wrap">
+nav.main-nav { display: flex; align-items: center; gap: 4px; }
+nav.main-nav > a { font-size: 13.5px; color: var(--muted); text-decoration: none; font-weight: 600; padding: 8px 12px; border-radius: 7px; }
+nav.main-nav > a:hover, nav.main-nav > a.active { color: var(--blue); background: var(--cloud); }
+.nav-cta { background: var(--blue) !important; color: #fff !important; padding: 9px 16px !important; margin-left: 8px; }
+.nav-cta:hover { background: var(--blue-deep) !important; }
+.lang-switcher { margin-left: 10px; border: 1.5px solid var(--line); border-radius: 7px; padding: 7px 10px; font-family: 'Manrope', sans-serif; font-size: 12.5px; font-weight: 700; color: var(--ink); background: #fff; cursor: pointer; }
+.lang-switcher:hover { border-color: var(--blue); }
+.burger { display: none; background: none; border: none; cursor: pointer; padding: 6px; }
+.burger svg { width: 24px; height: 24px; color: var(--ink); }
 
-  <div class="content-section">
-    <div class="content-section-head"><h2>Вопросы — ответы</h2></div>
-    <div class="placeholder-card">
-      <span class="tag">Содержание уточняется</span>
-      <h3>Часто задаваемые вопросы</h3>
-      <p>Пришлите список вопросов и ответов — оформлю в удобном раскрывающемся виде.</p>
-    </div>
-  </div>
+@media (max-width: 860px) {
+  nav.main-nav { display: none; position: absolute; top: 100%; left: 0; right: 0; background: #fff; border-bottom: 1px solid var(--line); flex-direction: column; align-items: stretch; padding: 10px; box-shadow: 0 12px 24px rgba(23,27,46,0.08); }
+  nav.main-nav.open { display: flex; }
+  nav.main-nav > a { padding: 12px 14px; }
+  .nav-cta { margin-left: 0; text-align: center; }
+  .burger { display: block; }
+}
 
-  <div class="content-section">
-    <div class="content-section-head"><h2>Статьи по безопасности</h2></div>
-    <div class="placeholder-grid">
-      <div class="article-card">
-        <h3>Уровень производственного травматизма в Казахстане снизился на четверть</h3>
-        <p>Эксперты связывают снижение с курсом на «нулевую терпимость» к травматизму, но отмечают, что слабая культура охраны труда и износ оборудования по-прежнему остаются главными факторами риска — особенно там, где не проводится анализ безопасности перед работами повышенной опасности.</p>
-        <div class="article-meta"><span>24.kz</span><span>8 июня 2026</span></div>
-        <a class="read-more" href="https://24.kz/ru/news/social/773221-uroven-proizvodstvennogo-travmatizma-sokratilsya-na-25" target="_blank">Читать статью →</a>
-      </div>
-      <div class="article-card">
-        <h3>Всемирный день охраны труда: где в Казахстане сохраняются самые высокие риски</h3>
-        <p>Наибольшие риски травматизма остаются в промышленных регионах — Карагандинской, Улытауской и Восточно-Казахстанской областях, а среди отраслей лидируют обрабатывающая и горнодобывающая промышленность. В апреле в Астане прошла международная конференция KIOSH-2026, посвящённая диалогу государства и бизнеса в области охраны труда.</p>
-        <div class="article-meta"><span>Азаттык Рухы</span><span>28 апреля 2026</span></div>
-        <a class="read-more" href="https://rus.azattyq-ruhy.kz/news/107534-vsemirnyi-den-okhrany-truda-uroven-travmatizma-na-proizvodstve-v-kazakhstane-sokratilsia" target="_blank">Читать статью →</a>
-      </div>
-      <div class="article-card">
-        <h3>Безопасный труд по-казахстански: миллионы работают в «зоне риска»</h3>
-        <p>Критический разбор того, как «Концепция безопасного труда до 2030 года», принятая в 2023 году, на практике пока остаётся скорее декларацией: официальная система контроля учитывает лишь традиционно признанные вредные факторы, оставляя за скобками часть реальных рисков на производстве.</p>
-        <div class="article-meta"><span>Eurasia24</span><span>6 мая 2026</span></div>
-        <a class="read-more" href="https://eurasia24.media/eksklyuziv/bezopasnyj-trud-po-kazahstanski-milliony-lyudej-rabotayut-v-zone-riska/" target="_blank">Читать статью →</a>
-      </div>
-    </div>
-  </div>
+/* ---------- page header (for sub-pages) ---------- */
+.page-hero { padding: 46px 0 40px; background: linear-gradient(160deg, var(--blue) 0%, var(--blue-deep) 100%); color: #fff; position: relative; overflow: hidden; }
+.page-hero::before { content: ""; position: absolute; top: -60px; right: -80px; width: 300px; height: 300px; border-radius: 50%; background: radial-gradient(circle, rgba(245,130,10,0.32) 0%, transparent 70%); }
+.page-hero .wrap { position: relative; }
+.breadcrumb { font-size: 12px; color: rgba(255,255,255,0.65); margin-bottom: 12px; }
+.breadcrumb a { text-decoration: none; color: rgba(255,255,255,0.8); }
+.page-hero h1 { color: #fff; font-size: clamp(26px, 3.6vw, 38px); margin: 0 0 10px; }
+.page-hero p { color: rgba(255,255,255,0.78); font-size: 15px; max-width: 560px; margin: 0; }
 
-  <div class="content-section">
-    <div class="content-section-head"><h2>Хроника происшествий</h2></div>
-    <p class="section-note">Реальные случаи из Казахстана — обновляется вручную. Хотите автоматическое обновление? Это можно подключить через бэкенд отдельным проектом.</p>
-    <div class="placeholder-grid">
-      <div class="incident-card">
-        <span class="incident-date">27–28 июля 2026 · Уральск, ЗКО</span>
-        <h3>Пожар на городском полигоне ТБО, введён режим ЧС</h3>
-        <p>Возгорание на свалке началось 27 июля около 14:30 из-за аномальной жары и сильного ветра. Огонь охватил около 13 га из 35 га полигона. 28 июля акимат Уральска ввёл режим чрезвычайной ситуации местного уровня — для оперативного обеспечения техники топливом. На тушении работали 40–50 единиц техники.</p>
-        <span class="incident-casualties none">Пострадавших нет</span>
-        <a class="source-link" href="https://www.zakon.kz/obshestvo/6526219-pozhar-na-poligone-stal-prichinoy-vvedeniya-rezhima-chs-v-uralske.html" target="_blank">Источник: zakon.kz</a>
-      </div>
-      <div class="incident-card">
-        <span class="incident-date">23 июля 2026 · Каскелен, Алматинская обл.</span>
-        <h3>Пожар в цехе по производству матрасов</h3>
-        <p>Загорелись бывшие в употреблении вещи, матрасы и производственный станок внутри цеха. Спасатели быстро локализовали огонь и не допустили его распространения на остальную часть здания площадью более 2800 м² — там же находятся офисы, магазин и общежитие для сотрудников.</p>
-        <span class="incident-casualties none">Пострадавших нет</span>
-        <a class="source-link" href="https://kazlenta.kz/117861-proizvodstvennyy-ceh-gorel-v-almatinskoy-oblasti.html" target="_blank">Источник: kazlenta.kz</a>
-      </div>
-      <div class="incident-card">
-        <span class="incident-date">5 мая 2026 · Усть-Каменогорск, ВКО</span>
-        <h3>Взрыв и пожар на свинцовом заводе ТОО «Казцинк»</h3>
-        <p>В плавильном отделении электролизного цеха произошёл хлопок пылеулавливающего устройства с последующим возгоранием и частичным обрушением конструкций (площадь обрушения — 220 м², площадь пожара — 120 м²). На месте работали 40 спасателей и 10 единиц техники МЧС.</p>
-        <span class="incident-casualties some">Погибли 2 человека, пострадали 5</span>
-        <a class="source-link" href="https://ru.sputnik.kz/20260505/avariya-i-pozhar-na-kaztsinke-pogibli-dva-sotrudnika--63187417.html" target="_blank">Источник: Sputnik Казахстан</a>
-      </div>
-    </div>
-  </div>
+/* ---------- hero (home) ---------- */
+.hero { padding: 64px 0 60px; position: relative; overflow: hidden; background: linear-gradient(160deg, var(--blue) 0%, var(--blue-deep) 100%); color: #fff; }
+.hero::before { content: ""; position: absolute; top: -60px; right: -80px; width: 340px; height: 340px; border-radius: 50%; background: radial-gradient(circle, rgba(245,130,10,0.35) 0%, transparent 70%); }
+.hero-grid { display: grid; grid-template-columns: 1.4fr 0.6fr; gap: 40px; align-items: center; position: relative; }
+.hero-eyebrow { display: inline-flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: var(--orange); background: rgba(245,130,10,0.16); padding: 6px 13px; border-radius: 20px; margin-bottom: 20px; }
+.hero h1 { font-size: clamp(26px, 3.6vw, 40px); line-height: 1.16; margin: 0 0 18px; color: #fff; }
+.hero h1 em { font-style: normal; color: var(--orange); }
+.hero p.lede { font-size: 16px; color: rgba(255,255,255,0.82); max-width: 500px; margin: 0; }
+.hero-stats { display: flex; gap: 36px; margin-top: 36px; flex-wrap: wrap; }
+.hero-stat .num { font-family: 'Fraunces', serif; font-size: 28px; color: var(--orange); display: block; }
+.hero-stat .label { font-size: 11.5px; color: rgba(255,255,255,0.7); }
+.hero-badge { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.18); border-radius: 16px; padding: 26px; backdrop-filter: blur(6px); }
+.hero-badge .lang-list { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
+.hero-badge .lang-chip { font-size: 11px; font-weight: 700; background: rgba(255,255,255,0.14); padding: 4px 9px; border-radius: 6px; }
+.hero-badge h3 { color: #fff; font-size: 14px; margin: 0 0 4px; }
+.hero-badge p { color: rgba(255,255,255,0.7); font-size: 12.5px; margin: 0; }
 
-  <div class="content-section">
-    <div class="content-section-head"><h2>Требования по технике безопасности</h2></div>
-    <p class="section-note">Действующие нормы Республики Казахстан со ссылками на Adilet.kz.</p>
-    <div class="placeholder-grid">
-      <div class="instruction-card">
-        <h3>Правила выдачи специальной одежды и СИЗ</h3>
-        <p>Порядок обеспечения работников спецодеждой, спецобувью и другими средствами индивидуальной защиты за счёт работодателя. Приказ Министра ЗдравСоцРазвития РК №1054 от 28.12.2015 (глава 3).</p>
-        <a class="read-more" href="https://adilet.zan.kz/rus/docs/V1500012675" target="_blank">Читать на Adilet.kz →</a>
-      </div>
-      <div class="instruction-card">
-        <h3>Правила выдачи молока работникам вредных производств</h3>
-        <p>Порядок бесплатной выдачи молока или равноценных пищевых продуктов работникам, занятым на работах с вредными условиями труда. Тот же приказ №1054 от 28.12.2015 (глава 2).</p>
-        <a class="read-more" href="https://adilet.zan.kz/rus/docs/V1500012675" target="_blank">Читать на Adilet.kz →</a>
-      </div>
-      <div class="instruction-card">
-        <h3>Правила оформления и применения наряда-допуска</h3>
-        <p>Порядок оформления и применения нарядов-допусков при производстве работ в условиях повышенной опасности. Приказ Министра труда и соцзащиты РК №344 от 28.08.2020.</p>
-        <a class="read-more" href="https://adilet.zan.kz/rus/docs/V2000021151" target="_blank">Читать на Adilet.kz →</a>
-      </div>
-    </div>
-  </div>
+/* ---------- section nav cards (home) ---------- */
+.section-nav { margin-top: 60px; }
+.section-nav-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; }
+.section-card { background: var(--cloud); border: 1px solid var(--line); border-radius: 14px; padding: 24px; text-decoration: none; color: var(--ink); display: flex; flex-direction: column; gap: 12px; transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease; }
+.section-card:hover { transform: translateY(-3px); box-shadow: 0 14px 30px rgba(23,27,46,0.10); border-color: var(--blue); }
+.section-card .icon { width: 42px; height: 42px; border-radius: 10px; display: flex; align-items: center; justify-content: center; background: var(--orange-soft); color: var(--orange); }
+.section-card .icon svg { width: 21px; height: 21px; }
+.section-card h3 { font-size: 16.5px; margin: 0; }
+.section-card p { font-size: 13px; color: var(--muted); margin: 0; }
+.section-card .go { font-size: 12.5px; font-weight: 700; color: var(--blue); margin-top: auto; }
 
-  <div class="content-section">
-    <div class="content-section-head"><h2>Нормативная база</h2></div>
-    <div class="norm-lead">
-      <div>
-        <h3>Всегда актуальная версия — напрямую с Adilet.kz</h3>
-        <p>Ссылки ведут на информационно-правовую систему «Әділет» — тексты законов там обновляются сразу при внесении изменений, поэтому вы всегда видите действующую редакцию.</p>
-      </div>
-      <a href="https://adilet.zan.kz/rus/docs/Z1400000188" target="_blank">Закон «О гражданской защите» →</a>
-    </div>
-    <div class="norm-grid">
-      <div class="norm-category norm-category-wide">
-        <h3>Промышленная безопасность</h3>
-        <ul>
-          <li><a href="https://adilet.zan.kz/rus/docs/P2400000651" target="_blank">Концепция промышленной безопасности РК на 2024–2030 годы<span class="doc-meta">Adilet.kz</span></a></li>
-          <li><a href="https://adilet.zan.kz/rus/docs/V1400010276" target="_blank">...для ОПО химической отрасли промышленности<span class="doc-meta">Adilet.kz</span></a></li>
-          <li><a href="https://adilet.zan.kz/rus/docs/V1400010274" target="_blank">...по производству расплавленных металлов<span class="doc-meta">Adilet.kz</span></a></li>
-          <li><a href="https://adilet.zan.kz/rus/docs/V1400010225" target="_blank">...при обращении с источниками ионизирующего излучения<span class="doc-meta">Adilet.kz</span></a></li>
-          <li><a href="https://adilet.zan.kz/rus/docs/V1400010251" target="_blank">...при эксплуатации компрессорных станций<span class="doc-meta">Adilet.kz</span></a></li>
-          <li><a href="https://adilet.zan.kz/rus/docs/V1400010332" target="_blank">...при эксплуатации грузоподъёмных механизмов<span class="doc-meta">Adilet.kz</span></a></li>
-          <li><a href="https://adilet.zan.kz/rus/docs/V1400010189" target="_blank">...при производстве фтористоводородной кислоты<span class="doc-meta">Adilet.kz</span></a></li>
-          <li><a href="https://adilet.zan.kz/rus/docs/V1400010240" target="_blank">...при эксплуатации магистральных трубопроводов<span class="doc-meta">Adilet.kz</span></a></li>
-          <li><a href="https://adilet.zan.kz/rus/docs/V1400010187" target="_blank">...при геологоразведке, добыче и переработке урана<span class="doc-meta">Adilet.kz</span></a></li>
-          <li><a href="https://adilet.zan.kz/rus/docs/V1400010253" target="_blank">...для хвостовых и шламовых хозяйств ОПО<span class="doc-meta">Adilet.kz</span></a></li>
-          <li><a href="https://adilet.zan.kz/rus/docs/V2100023068" target="_blank">...при эксплуатации и ремонте резервуаров для нефти и нефтепродуктов<span class="doc-meta">Adilet.kz</span></a></li>
-          <li><a href="https://adilet.zan.kz/rus/docs/V1400010250" target="_blank">...для ОПО нефтяной и газовой отраслей промышленности<span class="doc-meta">Adilet.kz</span></a></li>
-          <li><a href="https://adilet.zan.kz/rus/docs/V1400010258" target="_blank">...для ОПО, ведущих работы по переработке минерального сырья<span class="doc-meta">Adilet.kz</span></a></li>
-          <li><a href="https://adilet.zan.kz/rus/docs/V1400010255" target="_blank">...для ОПО угольных шахт<span class="doc-meta">Adilet.kz</span></a></li>
-          <li><a href="https://adilet.zan.kz/rus/docs/V1400010303" target="_blank">...при эксплуатации оборудования, работающего под давлением<span class="doc-meta">Adilet.kz</span></a></li>
-          <li><a href="https://adilet.zan.kz/rus/docs/V1400010191" target="_blank">...при производстве бериллия, его соединений и изделий из них<span class="doc-meta">Adilet.kz</span></a></li>
-          <li><a href="https://adilet.zan.kz/rus/docs/V1400010256" target="_blank">...для ОПО в нефтехимической, нефтеперерабатывающей отраслях, нефтебаз и АЗС<span class="doc-meta">Adilet.kz</span></a></li>
-          <li><a href="https://adilet.zan.kz/rus/docs/V1400010239" target="_blank">...для ОПО, осуществляющих нефтяные операции на море<span class="doc-meta">Adilet.kz</span></a></li>
-          <li><a href="https://adilet.zan.kz/rus/docs/V1400010291" target="_blank">...для ОПО по хранению и переработке растительного сырья<span class="doc-meta">Adilet.kz</span></a></li>
-          <li><a href="https://adilet.zan.kz/rus/docs/V1400010238" target="_blank">...для ОПО по подготовке и переработке газов<span class="doc-meta">Adilet.kz</span></a></li>
-          <li><a href="https://adilet.zan.kz/rus/docs/V1400010244" target="_blank">...для ОПО, ведущих взрывные работы и работы со взрывчатыми материалами<span class="doc-meta">Adilet.kz</span></a></li>
-          <li><a href="https://adilet.zan.kz/rus/docs/V2100022883" target="_blank">Критерии отнесения опасных производственных объектов к декларируемым<span class="doc-meta">Adilet.kz</span></a></li>
-          <li><a href="https://adilet.zan.kz/rus/docs/V1400010257" target="_blank">Правила, определяющие критерии отнесения ОПО к декларируемым<span class="doc-meta">Adilet.kz</span></a></li>
-          <li><a href="https://adilet.zan.kz/rus/docs/V1400010310" target="_blank">Правила идентификации опасных производственных объектов<span class="doc-meta">Adilet.kz</span></a></li>
-          <li><a href="https://adilet.zan.kz/rus/docs/V1500012479" target="_blank">Правила сдачи экзаменов руководителями юрлиц, декларирующих промбезопасность, и членами ПДЭК<span class="doc-meta">Adilet.kz</span></a></li>
-          <li><a href="https://adilet.zan.kz/rus/docs/V1400010242" target="_blank">Правила определения общего уровня опасности ОПО<span class="doc-meta">Adilet.kz</span></a></li>
-          <li><a href="https://adilet.zan.kz/rus/docs/V2100023461" target="_blank">Правила подготовки, переподготовки и проверки знаний специалистов и работников в области промышленной безопасности<span class="doc-meta">Adilet.kz</span></a></li>
-        </ul>
-      </div>
-      <div class="norm-category">
-        <h3>Безопасность и охрана труда</h3>
-        <ul>
-          <li><a href="https://adilet.zan.kz/rus/docs/K1500000414" target="_blank">Трудовой кодекс РК — глава по безопасности и охране труда<span class="doc-meta">Adilet.kz</span></a></li>
-          <li><a href="https://adilet.zan.kz/rus/docs/V1500012665" target="_blank">Правила и сроки обучения, инструктирования и проверки знаний по безопасности и охране труда (Приказ №1019)<span class="doc-meta">Adilet.kz</span></a></li>
-          <li><a href="https://adilet.zan.kz/rus/docs/P2300001182" target="_blank">Концепция безопасного труда РК на 2024–2030 годы<span class="doc-meta">Adilet.kz</span></a></li>
-          <li><a href="https://adilet.zan.kz/rus/docs/G24G0000490" target="_blank">Профессиональный стандарт «Безопасность и охрана труда»<span class="doc-meta">Adilet.kz</span></a></li>
-        </ul>
-      </div>
-      <div class="norm-category">
-        <h3>Пожарная безопасность</h3>
-        <ul>
-          <li><a href="https://adilet.zan.kz/rus/docs/V2200026867" target="_blank">Правила пожарной безопасности (Приказ МЧС РК №55)<span class="doc-meta">Adilet.kz</span></a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
+/* ---------- legend ---------- */
+.legend { display: flex; gap: 22px; padding: 28px 0 4px; flex-wrap: wrap; }
+.legend-item { display: flex; align-items: center; gap: 8px; font-size: 12.5px; color: var(--muted); font-weight: 600; }
+.dot { width: 8px; height: 8px; border-radius: 50%; }
+.dot.ready { background: var(--ready); }
+.dot.pending { background: var(--pending); }
 
-  <div class="content-section">
-    <div class="content-section-head"><h2>История возникновения промышленной безопасности</h2></div>
-    <div class="history-article">
-      <p>Идея, что фабрику нужно защищать от неё самой, появилась внезапно — и не там, где её ожидаешь. В 1802 году английский парламент принял закон «О здоровье и нравственности учеников» (Health and Morals of Apprentices Act) — первый в мире государственный акт, регулирующий условия труда на производстве. Его автором был не инженер и не врач, а сам крупный фабрикант — сэр Роберт Пиль-старший.</p>
-      <div class="history-callout"><strong>Интересный факт:</strong> толчком к закону послужила эпидемия среди детей на текстильных фабриках Пиля — некоторых нанимали работать с 4–8 лет, привязывая к тележкам в узких проходах. Закон обязал фабрики иметь достаточную вентиляцию и окна, дважды в год белить стены известью, а детский труд ограничил 12 часами в сутки без ночных смен — сегодня это звучит как минимум, но два века назад это была революция.</div>
-      <p>В Российской империи, частью которой был и Казахстан, первый специальный надзор за безопасностью труда возник в горном деле — так называемая «горная полиция». Полноценное фабричное законодательство появилось позже: в 1886 году — закон «О мерах для охраны жизни и здоровья рабочих», а в 1899 году были изданы новые правила надзора за фабриками и горными заводами.</p>
-      <p>Само понятие «промышленная безопасность» как отдельная от общей охраны труда правовая категория — на удивление молодое: оно оформилось только в 1990-е годы, когда стало ясно, что аварии на опасных производственных объектах (шахты, химические заводы, магистральные трубопроводы) требуют отдельного, более строгого регулирования, чем обычные вопросы условий труда в офисе или цехе.</p>
-      <p>В независимом Казахстане путь профильного госоргана был извилистым — по сути, полный круг длиной более 20 лет:</p>
-      <ul class="history-timeline">
-        <li><span class="year">1997</span><span class="desc">— Указом Президента РК от 22 апреля создан Государственный комитет РК по чрезвычайным ситуациям. Ему передают Государственную противопожарную службу из состава МВД.</span></li>
-        <li><span class="year">1997–2014</span><span class="desc">— Госкомитет преобразуется сначала в Агентство РК по чрезвычайным ситуациям, а затем — в полноценное Министерство по чрезвычайным ситуациям РК.</span></li>
-        <li><span class="year">2014</span><span class="desc">— 6 августа МЧС РК упраздняется: функции по ЧС и пожарной безопасности передаются в МВД (Комитет по чрезвычайным ситуациям), а промышленная безопасность и госрезерв уходят в экономические министерства — там появляется Комитет индустриального развития и промышленной безопасности.</span></li>
-        <li><span class="year">2020</span><span class="desc">— 9 сентября Указом Президента №408 Министерство по чрезвычайным ситуациям РК образовано заново, и впервые в его состав вместе с функциями МВД по ЧС и пожарной безопасности входит промышленная безопасность из Министерства индустрии. Так возникает нынешний Комитет промышленной безопасности МЧС РК — тот самый орган, что сегодня выдаёт аттестаты учебным центрам вроде нашего.</span></li>
-      </ul>
-    </div>
-  </div>
+/* ---------- category ---------- */
+.category { margin-top: 56px; }
+.category-head { display: flex; align-items: center; gap: 14px; margin-bottom: 4px; }
+.category-icon { width: 40px; height: 40px; flex-shrink: 0; border-radius: 10px; display: flex; align-items: center; justify-content: center; background: var(--orange-soft); color: var(--orange); }
+.category-icon svg { width: 20px; height: 20px; }
+.category-head h2 { font-size: 21px; margin: 0; color: var(--ink); }
+.category-head .count { font-size: 12px; color: var(--muted); margin-left: auto; white-space: nowrap; font-weight: 600; }
+.category-desc { color: var(--muted); font-size: 13.5px; margin: 8px 0 22px 54px; }
 
-  <div class="content-section">
-    <div class="content-section-head"><h2>Видео</h2></div>
-    <p class="section-note">Официальные учебные ролики ФГБУ «ВНИИ труда» — показывают типичные нарушения и опасности без травмирующих сцен.</p>
-    <div class="video-grid">
-      <div class="video-card">
-        <div class="video-embed"><iframe src="https://www.youtube.com/embed/_fz2zWitTyg" title="Охрана труда при работе с инструментом и приспособлениями" allowfullscreen></iframe></div>
-        <div class="video-info"><h3>Охрана труда при работе с инструментом и приспособлениями</h3></div>
-      </div>
-      <div class="video-card">
-        <div class="video-embed"><iframe src="https://www.youtube.com/embed/HZacjnjOF6c" title="Охрана труда при работе на высоте" allowfullscreen></iframe></div>
-        <div class="video-info"><h3>Охрана труда при работе на высоте</h3></div>
-      </div>
-      <div class="video-card">
-        <div class="video-embed"><iframe src="https://www.youtube.com/embed/ZJYRv_DqZbQ" title="Охрана труда при эксплуатации промышленного транспорта" allowfullscreen></iframe></div>
-        <div class="video-info"><h3>Охрана труда при эксплуатации промышленного транспорта</h3></div>
-      </div>
-    </div>
-  </div>
+.course-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px; }
+.course-card { background: var(--cloud); border: 1px solid var(--line); border-radius: 12px; padding: 22px; display: flex; flex-direction: column; gap: 13px; position: relative; transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease; }
+.course-card:hover { transform: translateY(-3px); box-shadow: 0 14px 30px rgba(23,27,46,0.10); border-color: var(--blue); }
+.course-card.is-ready { background: #fff; border-color: rgba(28,154,91,0.25); }
+.course-card.is-ready:hover { border-color: var(--ready); box-shadow: 0 14px 30px rgba(28,154,91,0.14); }
+.status-badge { align-self: flex-start; font-size: 10.5px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; padding: 4px 10px; border-radius: 20px; }
+.status-badge.ready { color: var(--ready); background: var(--ready-bg); }
+.status-badge.pending { color: var(--pending); background: var(--pending-bg); }
+.course-title { font-size: 15px; font-weight: 700; line-height: 1.36; margin: 0; color: var(--ink); }
+.course-hours { font-size: 11.5px; color: var(--blue); font-weight: 700; }
+.course-actions { display: flex; gap: 8px; margin-top: auto; flex-wrap: wrap; }
+.btn { font-family: 'Manrope', sans-serif; font-size: 12.5px; font-weight: 700; text-decoration: none; padding: 10px 15px; border-radius: 7px; display: inline-flex; align-items: center; gap: 6px; cursor: pointer; transition: all 0.15s ease; border: none; }
+.btn-blue { background: var(--blue); color: #fff; }
+.btn-blue:hover { background: var(--blue-deep); }
+.btn-ghost { border: 1.5px solid var(--line); color: var(--ink); background: transparent; }
+.btn-ghost:hover { border-color: var(--blue); color: var(--blue); }
+.btn-disabled { border: 1.5px dashed var(--line); color: var(--muted); background: transparent; cursor: default; }
+.course-materials-list { font-size: 11.5px; color: var(--muted); display: flex; flex-wrap: wrap; gap: 4px; align-items: center; padding-top: 4px; border-top: 1px dashed var(--line); }
+.course-materials-list a { color: var(--blue); text-decoration: none; font-weight: 700; }
+.course-materials-list a:hover { text-decoration: underline; }
 
-</main>
+/* ---------- content placeholder blocks (Компания / Ресурсы / Решения) ---------- */
+.content-section { margin-top: 56px; }
+.content-section-head { display: flex; align-items: center; gap: 14px; margin-bottom: 22px; }
+.content-section-head h2 { font-size: 21px; margin: 0; }
+.placeholder-card { background: var(--cloud); border: 1.5px dashed var(--line); border-radius: 12px; padding: 26px; display: flex; flex-direction: column; gap: 10px; }
+.placeholder-card .tag { align-self: flex-start; font-size: 10.5px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; padding: 4px 10px; border-radius: 20px; color: var(--muted); background: #fff; border: 1px solid var(--line); }
+.placeholder-card h3 { font-size: 15.5px; margin: 0; font-family: 'Manrope', sans-serif; font-weight: 700; }
+.placeholder-card p { font-size: 13px; color: var(--muted); margin: 0; }
+.placeholder-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; }
 
-<footer>
-  <div class="wrap">
-    <p>© Safety Management Solution — Учебный центр промышленной безопасности, охраны труда и пожарной безопасности</p>
-    <div class="foot-links">
-      <a href="company.html">Компания</a>
-      <a href="courses.html">Учебный центр</a>
-      <a href="resources.html">Ресурсы</a>
-      <a href="solutions.html">Решения</a>
-    </div>
-  </div>
-</footer>
+/* ---------- materials CTA block ---------- */
+.materials-cta { margin-top: 64px; background: var(--ink); color: #fff; border-radius: 16px; padding: 36px; display: flex; justify-content: space-between; align-items: center; gap: 24px; flex-wrap: wrap; }
+.materials-cta h3 { color: #fff; margin: 0 0 6px; font-size: 19px; }
+.materials-cta p { color: rgba(255,255,255,0.65); margin: 0; font-size: 13.5px; max-width: 480px; }
 
-</body>
-</html>
+/* ---------- footer ---------- */
+footer { margin-top: 80px; border-top: 1px solid var(--line); padding: 32px 0 48px; background: var(--cloud); }
+footer .wrap { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+footer p { font-size: 12.5px; color: var(--muted); margin: 0; }
+footer .foot-links { display: flex; gap: 18px; flex-wrap: wrap; }
+footer .foot-links a { font-size: 12.5px; color: var(--muted); text-decoration: none; font-weight: 600; }
+footer .foot-links a:hover { color: var(--blue); }
+
+/* ---------- about stats (light bg version of hero-stat) ---------- */
+.about-stats { display: flex; gap: 40px; flex-wrap: wrap; margin-top: 26px; padding-top: 26px; border-top: 1px dashed var(--line); }
+.about-stat .num { font-family: 'Fraunces', serif; font-size: 30px; color: var(--blue); display: block; }
+.about-stat .label { font-size: 12.5px; color: var(--muted); max-width: 170px; }
+
+/* ---------- testimonials ---------- */
+.testimonial-card { background: var(--cloud); border: 1px solid var(--line); border-radius: 12px; padding: 26px; display: flex; flex-direction: column; gap: 16px; }
+.testimonial-card p.quote { font-family: 'Fraunces', serif; font-size: 15.5px; font-style: italic; color: var(--ink); margin: 0; line-height: 1.5; }
+.testimonial-author { display: flex; align-items: center; gap: 12px; }
+.testimonial-author .avatar { width: 46px; height: 46px; border-radius: 50%; object-fit: cover; flex-shrink: 0; background: var(--line); }
+.testimonial-author .info { display: flex; flex-direction: column; gap: 2px; }
+.testimonial-author .name { font-weight: 700; font-size: 13.5px; color: var(--ink); }
+.testimonial-author .role { font-size: 12px; color: var(--muted); }
+
+/* ---------- contact block ---------- */
+.contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 18px; }
+.contact-item { background: var(--cloud); border: 1px solid var(--line); border-radius: 12px; padding: 20px; }
+.contact-item .label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); font-weight: 700; margin-bottom: 6px; }
+.contact-item a, .contact-item .value { font-size: 14.5px; color: var(--ink); font-weight: 600; text-decoration: none; }
+.contact-item a:hover { color: var(--blue); }
+/* ---------- article cards (Статьи по безопасности) ---------- */
+.article-card { background: var(--cloud); border: 1px solid var(--line); border-radius: 12px; padding: 24px; display: flex; flex-direction: column; gap: 10px; }
+.article-card h3 { font-size: 15.5px; margin: 0; line-height: 1.35; }
+.article-card p { font-size: 13px; color: var(--muted); margin: 0; }
+.article-meta { font-size: 11.5px; color: var(--muted); display: flex; gap: 10px; flex-wrap: wrap; }
+.article-card a.read-more { font-size: 12.5px; font-weight: 700; color: var(--blue); text-decoration: none; margin-top: auto; }
+.article-card a.read-more:hover { text-decoration: underline; }
+
+/* ---------- incident / emergency news cards ---------- */
+.incident-card { background: #fff; border: 1px solid var(--line); border-left: 4px solid var(--orange); border-radius: 10px; padding: 20px; display: flex; flex-direction: column; gap: 8px; }
+.incident-date { font-size: 11px; font-weight: 700; color: var(--orange); text-transform: uppercase; letter-spacing: 0.04em; }
+.incident-card h3 { font-size: 14.5px; margin: 0; }
+.incident-card p { font-size: 13px; color: var(--ink); margin: 0; line-height: 1.5; }
+.incident-casualties { font-size: 12.5px; font-weight: 700; }
+.incident-casualties.none { color: var(--ready); }
+.incident-casualties.some { color: var(--pending); }
+.incident-card a.source-link { font-size: 12px; color: var(--muted); text-decoration: none; margin-top: 4px; }
+.incident-card a.source-link:hover { color: var(--blue); }
+/* ---------- instruction cards (Инструкции по ТБ) ---------- */
+.instruction-card { background: var(--cloud); border: 1px solid var(--line); border-radius: 12px; padding: 22px; display: flex; flex-direction: column; gap: 8px; }
+.instruction-card h3 { font-size: 14.5px; margin: 0; }
+.instruction-card p { font-size: 13px; color: var(--muted); margin: 0; }
+.instruction-card a.read-more { font-size: 12.5px; font-weight: 700; color: var(--blue); text-decoration: none; margin-top: auto; }
+.instruction-card a.read-more:hover { text-decoration: underline; }
+
+/* ---------- normative base (Нормативная база) ---------- */
+.norm-lead { background: var(--ink); color: #fff; border-radius: 12px; padding: 22px 26px; display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; margin-bottom: 18px; }
+.norm-lead h3 { color: #fff; font-size: 15.5px; margin: 0 0 4px; }
+.norm-lead p { color: rgba(255,255,255,0.65); font-size: 12.5px; margin: 0; max-width: 460px; }
+.norm-lead a { background: var(--orange); color: #fff; font-size: 12.5px; font-weight: 700; text-decoration: none; padding: 9px 16px; border-radius: 7px; white-space: nowrap; }
+.norm-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+.norm-category-wide { grid-column: 1 / -1; }
+.norm-category.norm-category-wide ul { display: block; columns: 2; column-gap: 28px; }
+.norm-category.norm-category-wide ul li { display: block; break-inside: avoid; margin-bottom: 11px; }
+@media (max-width: 700px) { .norm-category.norm-category-wide ul { columns: 1; } }
+.norm-category { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 22px; min-width: 0; }
+.norm-category h3 { font-size: 14.5px; margin: 0 0 14px; color: var(--blue); }
+.norm-category ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 11px; }
+.norm-category li a { font-size: 13px; color: var(--ink); text-decoration: none; font-weight: 600; display: block; white-space: normal; overflow-wrap: break-word; word-break: break-word; line-height: 1.45; }
+.norm-category li a:hover { color: var(--blue); }
+.norm-category li .doc-meta { display: block; font-size: 11px; color: var(--muted); font-weight: 400; margin-top: 3px; }
+.norm-pending-list { list-style: none; margin: 14px 0 0; padding: 12px 0 0; border-top: 1px dashed var(--line); display: flex; flex-direction: column; gap: 9px; }
+.norm-pending-list li { font-size: 12.5px; color: var(--ink); font-weight: 500; padding-left: 14px; position: relative; }
+.norm-pending-list li::before { content: "·"; position: absolute; left: 0; color: var(--pending); font-weight: 700; }
+
+/* ---------- history article ---------- */
+.history-article { background: var(--cloud); border: 1px solid var(--line); border-radius: 14px; padding: 30px; }
+.history-article p { font-size: 14px; line-height: 1.7; color: var(--ink); margin: 0 0 16px; }
+.history-article p:last-child { margin-bottom: 0; }
+.history-callout { background: var(--orange-soft); border-left: 4px solid var(--orange); border-radius: 8px; padding: 16px 20px; margin: 20px 0; font-size: 13.5px; color: var(--ink); }
+.history-callout strong { color: var(--blue-deep); }
+.history-timeline { list-style: none; margin: 20px 0 0; padding: 0; border-top: 1px dashed var(--line); }
+.history-timeline li { padding: 14px 0; border-bottom: 1px dashed var(--line); display: flex; gap: 16px; }
+.history-timeline .year { font-family: 'Fraunces', serif; font-weight: 700; color: var(--blue); font-size: 15px; flex-shrink: 0; width: 56px; }
+.history-timeline .desc { font-size: 13.5px; color: var(--ink); line-height: 1.5; }
+
+/* ---------- video grid ---------- */
+.video-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+.video-card { background: var(--cloud); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
+.video-card .video-embed { position: relative; width: 100%; padding-top: 56.25%; background: #000; }
+.video-card .video-embed iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+.video-card .video-info { padding: 16px 18px; }
+.video-card h3 { font-size: 13.5px; margin: 0; }
+.footer-contacts { display: flex; gap: 18px; flex-wrap: wrap; font-size: 12.5px; color: var(--muted); }
+.footer-contacts a { color: var(--muted); text-decoration: none; font-weight: 600; }
+.footer-contacts a:hover { color: var(--blue); }
+.section-note { font-size: 12.5px; color: var(--muted); margin: -14px 0 20px; }
+
+@media (max-width: 760px) {
+  .hero-grid { grid-template-columns: 1fr; }
+  .category-desc { margin-left: 0; }
+  .about-stats { gap: 24px; }
+}
+@media (max-width: 600px) {
+  .hero, .page-hero { padding: 40px 0 34px; }
+  .course-grid, .placeholder-grid, .section-nav-grid { grid-template-columns: 1fr; }
+  .materials-cta { flex-direction: column; align-items: flex-start; text-align: left; }
+}
