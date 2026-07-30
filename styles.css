@@ -205,6 +205,9 @@ footer .foot-links a:hover { color: var(--blue); }
 .norm-category li a { font-size: 13px; color: var(--ink); text-decoration: none; font-weight: 600; display: block; }
 .norm-category li a:hover { color: var(--blue); }
 .norm-category li .doc-meta { display: block; font-size: 11px; color: var(--muted); font-weight: 400; margin-top: 2px; }
+.norm-pending-list { list-style: none; margin: 14px 0 0; padding: 12px 0 0; border-top: 1px dashed var(--line); display: flex; flex-direction: column; gap: 9px; }
+.norm-pending-list li { font-size: 12.5px; color: var(--ink); font-weight: 500; padding-left: 14px; position: relative; }
+.norm-pending-list li::before { content: "·"; position: absolute; left: 0; color: var(--pending); font-weight: 700; }
 
 /* ---------- history article ---------- */
 .history-article { background: var(--cloud); border: 1px solid var(--line); border-radius: 14px; padding: 30px; }
