@@ -1,0 +1,39 @@
+name: Проверка новых происшествий
+
+# Раз в неделю (понедельник, 06:00 по Астане = 00:00 UTC) собирает
+# кандидатов на публикацию в разделе "Хроника происшествий".
+# НЕ публикует ничего на сайт автоматически — только откладывает
+# найденные заголовки в data/incident-candidates.md для проверки
+# человеком. Можно также запустить вручную кнопкой "Run workflow".
+on:
+  schedule:
+    - cron: '0 0 * * 1'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  check-incidents:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Run checker
+        run: node scripts/check-incidents.js
+
+      - name: Commit new candidates (if any)
+        run: |
+          git config user.name "incidents-watcher"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/incident-candidates.md data/incident-candidates-seen.json
+          if git diff --cached --quiet; then
+            echo "Новых кандидатов нет — коммит не нужен."
+          else
+            git commit -m "Новые кандидаты в Хронику происшествий ($(date +%F))"
+            git push
+          fi
