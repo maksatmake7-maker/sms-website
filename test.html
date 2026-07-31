@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Тестирование — Safety Management Solution</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+  .test-wrap { max-width: 760px; margin: 0 auto; padding: 40px 24px 80px; }
+  .test-head { margin-bottom: 28px; }
+  .test-head h1 { font-size: clamp(22px, 3vw, 28px); margin: 0 0 8px; }
+  .test-meta { display: flex; gap: 14px; align-items: center; flex-wrap: wrap; font-size: 13px; color: var(--muted); }
+  .lang-toggle { display: flex; gap: 6px; }
+  .lang-toggle a { font-size: 12px; font-weight: 700; padding: 6px 12px; border-radius: 7px; text-decoration: none; border: 1.5px solid var(--line); color: var(--muted); }
+  .lang-toggle a.active { background: var(--blue); color: #fff; border-color: var(--blue); }
+  .test-state { background: var(--cloud); border: 1px solid var(--line); border-radius: 14px; padding: 40px; text-align: center; color: var(--muted); font-size: 14px; }
+  .test-state.error { color: var(--pending); }
+  .q-card { background: var(--cloud); border: 1px solid var(--line); border-radius: 12px; padding: 22px 24px; margin-bottom: 14px; }
+  .q-card.unanswered-flag { border-color: var(--pending); }
+  .q-num { font-size: 11px; font-weight: 700; color: var(--blue); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px; }
+  .q-text { font-size: 14.5px; font-weight: 700; margin: 0 0 14px; line-height: 1.4; }
+  .q-options { display: flex; flex-direction: column; gap: 9px; }
+  .q-option { display: flex; align-items: flex-start; gap: 10px; font-size: 13.5px; cursor: pointer; padding: 8px 10px; border-radius: 8px; transition: background 0.12s ease; }
+  .q-option:hover { background: rgba(30,48,216,0.05); }
+  .q-option input { margin-top: 3px; accent-color: var(--blue); flex-shrink: 0; }
+  .submit-bar { position: sticky; bottom: 0; background: #fff; border-top: 1px solid var(--line); padding: 16px 0; margin-top: 24px; display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
+  .progress-text { font-size: 12.5px; color: var(--muted); }
+  .result-card { background: linear-gradient(160deg, var(--blue) 0%, var(--blue-deep) 100%); color: #fff; border-radius: 16px; padding: 40px; text-align: center; }
+  .result-card .score { font-family: 'Fraunces', serif; font-size: 52px; color: var(--orange); display: block; margin-bottom: 6px; }
+  .result-card .grade { font-size: 18px; font-weight: 700; margin-bottom: 6px; }
+  .result-card .grade-note { font-size: 13px; color: rgba(255,255,255,0.7); margin-bottom: 24px; }
+  .result-actions { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+  .result-actions a, .result-actions button { font-family: 'Manrope', sans-serif; font-size: 13px; font-weight: 700; padding: 11px 20px; border-radius: 8px; text-decoration: none; border: none; cursor: pointer; }
+  .result-actions .btn-primary { background: var(--orange); color: #fff; }
+  .result-actions .btn-secondary { background: rgba(255,255,255,0.12); color: #fff; border: 1px solid rgba(255,255,255,0.3); }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <img class="brand-mark" src="logo.jpg" alt="Safety Management Solution">
+      <span class="brand-name">Safety Management<br>Solution</span>
+    </a>
+    <button class="burger" onclick="document.querySelector('nav.main-nav').classList.toggle('open')" aria-label="Меню">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18" stroke-linecap="round"/></svg>
+    </button>
+    <nav class="main-nav">
+      <a href="company.html">Компания</a>
+      <a href="courses.html">Учебный центр</a>
+      <a href="resources.html">Ресурсы</a>
+      <a href="solutions.html">Решения</a>
+      <a class="nav-cta" href="courses.html">Пройти обучение</a>
+    </nav>
+  </div>
+</header>
+
+<main class="test-wrap" id="app">
+  <div class="test-state">Загрузка теста…</div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>© Safety Management Solution — Учебный центр промышленной безопасности, охраны труда и пожарной безопасности</p>
+    <div class="foot-links">
+      <a href="company.html">Компания</a>
+      <a href="courses.html">Учебный центр</a>
+      <a href="resources.html">Ресурсы</a>
+      <a href="solutions.html">Решения</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  const params = new URLSearchParams(location.search);
+  const testId = params.get('id');
+  const lang = (params.get('lang') || 'ru').toLowerCase();
+  const app = document.getElementById('app');
+
+  function escapeHtml(str) {
+    const d = document.createElement('div');
+    d.textContent = str;
+    return d.innerHTML;
+  }
+
+  function renderError(msg) {
+    app.innerHTML = '<div class="test-state error">' + escapeHtml(msg) + '</div>';
+  }
+
+  if (!testId) {
+    renderError('Не указан тест. Вернитесь на страницу курсов и выберите «Пройти тест» ещё раз.');
+    return;
+  }
+
+  const jsonPath = 'tests/' + testId + '_' + lang + '.json';
+
+  fetch(jsonPath)
+    .then(function (res) {
+      if (!res.ok) throw new Error('not found');
+      return res.json();
+    })
+    .then(renderTest)
+    .catch(function () {
+      renderError('Тест «' + testId + '» пока не найден на сайте (' + jsonPath + '). Возможно, файл ещё не загружен в папку tests/.');
+    });
+
+  function renderTest(data) {
+    const otherLang = lang === 'ru' ? 'kz' : 'ru';
+    const otherLangUrl = '?id=' + encodeURIComponent(testId) + '&lang=' + otherLang;
+
+    let html = '';
+    html += '<div class="test-head">';
+    html += '<h1>' + escapeHtml(data.title) + '</h1>';
+    html += '<div class="test-meta">';
+    html += '<span>' + data.totalQuestions + ' вопросов</span>';
+    html += '<div class="lang-toggle">';
+    html += '<a href="?id=' + encodeURIComponent(testId) + '&lang=ru" class="' + (lang === 'ru' ? 'active' : '') + '">РУС</a>';
+    html += '<a href="?id=' + encodeURIComponent(testId) + '&lang=kz" class="' + (lang === 'kz' ? 'active' : '') + '">ҚАЗ</a>';
+    html += '</div></div></div>';
+
+    html += '<form id="testForm">';
+    data.questions.forEach(function (q, qi) {
+      html += '<div class="q-card" data-qindex="' + qi + '">';
+      html += '<div class="q-num">Вопрос ' + q.num + '</div>';
+      html += '<p class="q-text">' + escapeHtml(q.question) + '</p>';
+      html += '<div class="q-options">';
+      q.options.forEach(function (opt, oi) {
+        const optId = 'q' + qi + '_o' + oi;
+        html += '<label class="q-option" for="' + optId + '">';
+        html += '<input type="radio" id="' + optId + '" name="q' + qi + '" value="' + oi + '">';
+        html += '<span>' + escapeHtml(opt) + '</span>';
+        html += '</label>';
+      });
+      html += '</div></div>';
+    });
+    html += '</form>';
+
+    html += '<div class="submit-bar">';
+    html += '<span class="progress-text" id="progressText">Отвечено: 0 из ' + data.questions.length + '</span>';
+    html += '<button type="button" class="btn btn-blue" id="submitBtn">Проверить результат</button>';
+    html += '</div>';
+
+    html += '<div id="resultArea"></div>';
+
+    app.innerHTML = html;
+
+    const form = document.getElementById('testForm');
+    const progressText = document.getElementById('progressText');
+
+    function countAnswered() {
+      let count = 0;
+      data.questions.forEach(function (q, qi) {
+        if (form.querySelector('input[name="q' + qi + '"]:checked')) count++;
+      });
+      return count;
+    }
+
+    form.addEventListener('change', function () {
+      progressText.textContent = 'Отвечено: ' + countAnswered() + ' из ' + data.questions.length;
+    });
+
+    document.getElementById('submitBtn').addEventListener('click', function () {
+      let correct = 0;
+      let firstUnanswered = null;
+      document.querySelectorAll('.q-card').forEach(function (card) { card.classList.remove('unanswered-flag'); });
+
+      data.questions.forEach(function (q, qi) {
+        const checked = form.querySelector('input[name="q' + qi + '"]:checked');
+        const card = document.querySelector('.q-card[data-qindex="' + qi + '"]');
+        if (!checked) {
+          card.classList.add('unanswered-flag');
+          if (firstUnanswered === null) firstUnanswered = card;
+          return;
+        }
+        if (parseInt(checked.value, 10) === q.correctIndex) correct++;
+      });
+
+      if (firstUnanswered) {
+        firstUnanswered.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        progressText.textContent = 'Отвечено: ' + countAnswered() + ' из ' + data.questions.length + ' — заполните оставшиеся вопросы (выделены)';
+        return;
+      }
+
+      showResult(correct, data);
+    });
+
+    function showResult(correct, data) {
+      const gs = data.gradingScale || {};
+      let grade = '', gradeClass = '';
+      if (gs.excellent !== undefined && correct >= gs.excellent) { grade = 'Отлично'; }
+      else if (gs.good !== undefined && correct >= gs.good) { grade = 'Хорошо'; }
+      else if (gs.satisfactory !== undefined && correct >= gs.satisfactory) { grade = 'Удовлетворительно'; }
+      else { grade = 'Неудовлетворительно — пересдача'; }
+
+      let resHtml = '<div class="result-card">';
+      resHtml += '<span class="score">' + correct + ' / ' + data.questions.length + '</span>';
+      resHtml += '<div class="grade">' + grade + '</div>';
+      if (gs.note) resHtml += '<div class="grade-note">' + escapeHtml(gs.note) + '</div>';
+      resHtml += '<div class="result-actions">';
+      resHtml += '<button type="button" class="btn-secondary" onclick="location.reload()">Пройти ещё раз</button>';
+      resHtml += '<a class="btn-primary" href="courses.html">Вернуться к курсам</a>';
+      resHtml += '</div></div>';
+
+      document.getElementById('resultArea').innerHTML = resHtml;
+      document.getElementById('resultArea').scrollIntoView({ behavior: 'smooth', block: 'center' });
+      document.getElementById('submitBtn').disabled = true;
+      document.querySelector('.submit-bar').style.display = 'none';
+    }
+  }
+})();
+</script>
+
+</body>
+</html>
