@@ -8,6 +8,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
+<script src="i18n.js" defer></script>
 </head>
 <body>
 
@@ -27,61 +28,72 @@
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18" stroke-linecap="round"/></svg>
     </button>
     <nav class="main-nav">
-      <a href="company.html">Компания</a>
-      <a href="courses.html">Учебный центр</a>
-      <a href="resources.html" class="active">Ресурсы</a>
-      <a href="solutions.html">Решения</a>
-      <a class="nav-cta" href="courses.html">Пройти обучение</a>
+      <a href="company.html" data-i18n="nav_company">Компания</a>
+      <a href="courses.html" data-i18n="nav_courses">Учебный центр</a>
+      <a href="resources.html" class="active" data-i18n="nav_resources">Ресурсы</a>
+      <a href="solutions.html" data-i18n="nav_solutions">Решения</a>
+      <a class="nav-cta" href="courses.html" data-i18n="nav_cta">Пройти обучение</a>
+      <select id="langSwitcher" class="lang-switcher" onchange="applyLanguage(this.value)">
+        <option value="ru">RU</option>
+        <option value="kz">KZ</option>
+        <option value="en">EN</option>
+        <option value="tr">TR</option>
+        <option value="fr">FR</option>
+        <option value="de">DE</option>
+        <option value="uz">UZ</option>
+        <option value="kg">KG</option>
+        <option value="cn">CN</option>
+      </select>
     </nav>
   </div>
 </header>
 
 <section class="page-hero">
   <div class="wrap">
-    <div class="breadcrumb"><a href="index.html">Главная</a> / Ресурсы</div>
-    <h1>Ресурсы</h1>
-    <p>Статьи, советы, инструкции и нормативная база по промышленной, трудовой и пожарной безопасности.</p>
+    <div class="breadcrumb"><a href="index.html" data-i18n="breadcrumb_home">Главная</a> / <span data-i18n="nav_resources">Ресурсы</span></div>
+    <h1 data-i18n="res_hero_h1">Ресурсы</h1>
+    <p data-i18n="res_hero_lede">Статьи, советы, инструкции и нормативная база по промышленной, трудовой и пожарной безопасности.</p>
   </div>
 </section>
 
 <main class="wrap">
 
   <div class="content-section">
-    <div class="content-section-head"><h2>Вопросы — ответы</h2></div>
+    <div class="content-section-head"><h2 data-i18n="res_faq_title">Вопросы — ответы</h2></div>
     <div class="placeholder-card">
-      <span class="tag">Содержание уточняется</span>
-      <h3>Часто задаваемые вопросы</h3>
-      <p>Пришлите список вопросов и ответов — оформлю в удобном раскрывающемся виде.</p>
+      <span class="tag" data-i18n="content_tbd">Содержание уточняется</span>
+      <h3 data-i18n="res_faq_card_title">Часто задаваемые вопросы</h3>
+      <p data-i18n="res_faq_card_text">Пришлите список вопросов и ответов — оформлю в удобном раскрывающемся виде.</p>
     </div>
   </div>
 
   <div class="content-section">
-    <div class="content-section-head"><h2>Статьи по безопасности</h2></div>
+    <div class="content-section-head"><h2 data-i18n="res_articles_title">Статьи по безопасности</h2></div>
     <div class="placeholder-grid">
       <div class="article-card">
         <h3>Уровень производственного травматизма в Казахстане снизился на четверть</h3>
         <p>Эксперты связывают снижение с курсом на «нулевую терпимость» к травматизму, но отмечают, что слабая культура охраны труда и износ оборудования по-прежнему остаются главными факторами риска — особенно там, где не проводится анализ безопасности перед работами повышенной опасности.</p>
         <div class="article-meta"><span>24.kz</span><span>8 июня 2026</span></div>
-        <a class="read-more" href="https://24.kz/ru/news/social/773221-uroven-proizvodstvennogo-travmatizma-sokratilsya-na-25" target="_blank">Читать статью →</a>
+        <a class="read-more" href="https://24.kz/ru/news/social/773221-uroven-proizvodstvennogo-travmatizma-sokratilsya-na-25" target="_blank" data-i18n="res_read_article">Читать статью →</a>
       </div>
       <div class="article-card">
         <h3>Всемирный день охраны труда: где в Казахстане сохраняются самые высокие риски</h3>
         <p>Наибольшие риски травматизма остаются в промышленных регионах — Карагандинской, Улытауской и Восточно-Казахстанской областях, а среди отраслей лидируют обрабатывающая и горнодобывающая промышленность. В апреле в Астане прошла международная конференция KIOSH-2026, посвящённая диалогу государства и бизнеса в области охраны труда.</p>
         <div class="article-meta"><span>Азаттык Рухы</span><span>28 апреля 2026</span></div>
-        <a class="read-more" href="https://rus.azattyq-ruhy.kz/news/107534-vsemirnyi-den-okhrany-truda-uroven-travmatizma-na-proizvodstve-v-kazakhstane-sokratilsia" target="_blank">Читать статью →</a>
+        <a class="read-more" href="https://rus.azattyq-ruhy.kz/news/107534-vsemirnyi-den-okhrany-truda-uroven-travmatizma-na-proizvodstve-v-kazakhstane-sokratilsia" target="_blank" data-i18n="res_read_article">Читать статью →</a>
       </div>
       <div class="article-card">
         <h3>Безопасный труд по-казахстански: миллионы работают в «зоне риска»</h3>
         <p>Критический разбор того, как «Концепция безопасного труда до 2030 года», принятая в 2023 году, на практике пока остаётся скорее декларацией: официальная система контроля учитывает лишь традиционно признанные вредные факторы, оставляя за скобками часть реальных рисков на производстве.</p>
         <div class="article-meta"><span>Eurasia24</span><span>6 мая 2026</span></div>
-        <a class="read-more" href="https://eurasia24.media/eksklyuziv/bezopasnyj-trud-po-kazahstanski-milliony-lyudej-rabotayut-v-zone-riska/" target="_blank">Читать статью →</a>
+        <a class="read-more" href="https://eurasia24.media/eksklyuziv/bezopasnyj-trud-po-kazahstanski-milliony-lyudej-rabotayut-v-zone-riska/" target="_blank" data-i18n="res_read_article">Читать статью →</a>
       </div>
     </div>
   </div>
 
   <div class="content-section">
-    <div class="content-section-head"><h2>Хроника происшествий</h2></div>
-    <p class="section-note">Реальные случаи из Казахстана. Проверенные карточки ниже — курируются вручную. Раз в неделю GitHub Action автоматически подбирает свежих кандидатов из новостной ленты для проверки — <a href="https://github.com/maksatmake7-maker/sms-website/blob/main/data/incident-candidates.md" target="_blank">список кандидатов на публикацию</a>.</p>
+    <div class="content-section-head"><h2 data-i18n="res_incidents_title">Хроника происшествий</h2></div>
+    <p class="section-note"><span data-i18n="res_incidents_note1">Реальные случаи из Казахстана. Проверенные карточки ниже — курируются вручную.</span> <span data-i18n="res_incidents_note2">Раз в неделю GitHub Action автоматически подбирает свежих кандидатов из новостной ленты для проверки —</span> <a href="https://github.com/maksatmake7-maker/sms-website/blob/main/data/incident-candidates.md" target="_blank" data-i18n="res_incidents_candidates_link">список кандидатов на публикацию</a>.</p>
     <div class="placeholder-grid">
       <div class="incident-card">
         <span class="incident-date">27–28 июля 2026 · Уральск, ЗКО</span>
@@ -108,39 +120,39 @@
   </div>
 
   <div class="content-section">
-    <div class="content-section-head"><h2>Требования по технике безопасности</h2></div>
-    <p class="section-note">Действующие нормы Республики Казахстан со ссылками на Adilet.kz.</p>
+    <div class="content-section-head"><h2 data-i18n="res_requirements_title">Требования по технике безопасности</h2></div>
+    <p class="section-note" data-i18n="res_requirements_note">Действующие нормы Республики Казахстан со ссылками на Adilet.kz.</p>
     <div class="placeholder-grid">
       <div class="instruction-card">
         <h3>Правила выдачи специальной одежды и СИЗ</h3>
         <p>Порядок обеспечения работников спецодеждой, спецобувью и другими средствами индивидуальной защиты за счёт работодателя. Приказ Министра ЗдравСоцРазвития РК №1054 от 28.12.2015 (глава 3).</p>
-        <a class="read-more" href="https://adilet.zan.kz/rus/docs/V1500012675" target="_blank">Читать на Adilet.kz →</a>
+        <a class="read-more" href="https://adilet.zan.kz/rus/docs/V1500012675" target="_blank" data-i18n="res_read_adilet">Читать на Adilet.kz →</a>
       </div>
       <div class="instruction-card">
         <h3>Правила выдачи молока работникам вредных производств</h3>
         <p>Порядок бесплатной выдачи молока или равноценных пищевых продуктов работникам, занятым на работах с вредными условиями труда. Тот же приказ №1054 от 28.12.2015 (глава 2).</p>
-        <a class="read-more" href="https://adilet.zan.kz/rus/docs/V1500012675" target="_blank">Читать на Adilet.kz →</a>
+        <a class="read-more" href="https://adilet.zan.kz/rus/docs/V1500012675" target="_blank" data-i18n="res_read_adilet">Читать на Adilet.kz →</a>
       </div>
       <div class="instruction-card">
         <h3>Правила оформления и применения наряда-допуска</h3>
         <p>Порядок оформления и применения нарядов-допусков при производстве работ в условиях повышенной опасности. Приказ Министра труда и соцзащиты РК №344 от 28.08.2020.</p>
-        <a class="read-more" href="https://adilet.zan.kz/rus/docs/V2000021151" target="_blank">Читать на Adilet.kz →</a>
+        <a class="read-more" href="https://adilet.zan.kz/rus/docs/V2000021151" target="_blank" data-i18n="res_read_adilet">Читать на Adilet.kz →</a>
       </div>
     </div>
   </div>
 
   <div class="content-section">
-    <div class="content-section-head"><h2>Нормативная база</h2></div>
+    <div class="content-section-head"><h2 data-i18n="res_norms_title">Нормативная база</h2></div>
     <div class="norm-lead">
       <div>
-        <h3>Всегда актуальная версия — напрямую с Adilet.kz</h3>
-        <p>Ссылки ведут на информационно-правовую систему «Әділет» — тексты законов там обновляются сразу при внесении изменений, поэтому вы всегда видите действующую редакцию.</p>
+        <h3 data-i18n="res_norms_lead_title">Всегда актуальная версия — напрямую с Adilet.kz</h3>
+        <p data-i18n="res_norms_lead_text">Ссылки ведут на информационно-правовую систему «Әділет» — тексты законов там обновляются сразу при внесении изменений, поэтому вы всегда видите действующую редакцию.</p>
       </div>
-      <a href="https://adilet.zan.kz/rus/docs/Z1400000188" target="_blank">Закон «О гражданской защите» →</a>
+      <a href="https://adilet.zan.kz/rus/docs/Z1400000188" target="_blank" data-i18n="res_norms_law_link">Закон «О гражданской защите» →</a>
     </div>
     <div class="norm-grid">
       <div class="norm-category norm-category-wide">
-        <h3>Промышленная безопасность</h3>
+        <h3 data-i18n="cat1_name">Промышленная безопасность</h3>
         <ul>
           <li><a href="https://adilet.zan.kz/rus/docs/P2400000651" target="_blank">Концепция промышленной безопасности РК на 2024–2030 годы<span class="doc-meta">Adilet.kz</span></a></li>
           <li><a href="https://adilet.zan.kz/rus/docs/V1400010276" target="_blank">...для ОПО химической отрасли промышленности<span class="doc-meta">Adilet.kz</span></a></li>
@@ -172,7 +184,7 @@
         </ul>
       </div>
       <div class="norm-category">
-        <h3>Безопасность и охрана труда</h3>
+        <h3 data-i18n="cat2_name">Безопасность и охрана труда</h3>
         <ul>
           <li><a href="https://adilet.zan.kz/rus/docs/K1500000414" target="_blank">Трудовой кодекс РК — глава по безопасности и охране труда<span class="doc-meta">Adilet.kz</span></a></li>
           <li><a href="https://adilet.zan.kz/rus/docs/V1500012665" target="_blank">Правила и сроки обучения, инструктирования и проверки знаний по безопасности и охране труда (Приказ №1019)<span class="doc-meta">Adilet.kz</span></a></li>
@@ -181,7 +193,7 @@
         </ul>
       </div>
       <div class="norm-category">
-        <h3>Пожарная безопасность</h3>
+        <h3 data-i18n="cat3_name">Пожарная безопасность</h3>
         <ul>
           <li><a href="https://adilet.zan.kz/rus/docs/V2200026867" target="_blank">Правила пожарной безопасности (Приказ МЧС РК №55)<span class="doc-meta">Adilet.kz</span></a></li>
         </ul>
@@ -190,7 +202,7 @@
   </div>
 
   <div class="content-section">
-    <div class="content-section-head"><h2>История возникновения промышленной безопасности</h2></div>
+    <div class="content-section-head"><h2 data-i18n="res_history_title">История возникновения промышленной безопасности</h2></div>
     <div class="history-article">
       <p>Идея, что фабрику нужно защищать от неё самой, появилась внезапно — и не там, где её ожидаешь. В 1802 году английский парламент принял закон «О здоровье и нравственности учеников» (Health and Morals of Apprentices Act) — первый в мире государственный акт, регулирующий условия труда на производстве. Его автором был не инженер и не врач, а сам крупный фабрикант — сэр Роберт Пиль-старший.</p>
       <div class="history-callout"><strong>Интересный факт:</strong> толчком к закону послужила эпидемия среди детей на текстильных фабриках Пиля — некоторых нанимали работать с 4–8 лет, привязывая к тележкам в узких проходах. Закон обязал фабрики иметь достаточную вентиляцию и окна, дважды в год белить стены известью, а детский труд ограничил 12 часами в сутки без ночных смен — сегодня это звучит как минимум, но два века назад это была революция.</div>
@@ -207,71 +219,71 @@
   </div>
 
   <div class="content-section">
-    <div class="content-section-head"><h2>Видео</h2></div>
-    <p class="section-note">Официальные учебные ролики ФГБУ «ВНИИ труда» — показывают типичные нарушения и опасности без травмирующих сцен.</p>
+    <div class="content-section-head"><h2 data-i18n="res_video_title">Видео</h2></div>
+    <p class="section-note" data-i18n="res_video_note">Официальные учебные ролики ФГБУ «ВНИИ труда» — показывают типичные нарушения и опасности без травмирующих сцен.</p>
     <div class="video-grid">
       <div class="video-card">
         <div class="video-embed"><iframe src="https://www.youtube.com/embed/_fz2zWitTyg" title="Охрана труда при работе с инструментом и приспособлениями" allowfullscreen></iframe></div>
-        <div class="video-info"><h3>Охрана труда при работе с инструментом и приспособлениями</h3></div>
+        <div class="video-info"><h3 data-i18n="vid1_title">Охрана труда при работе с инструментом и приспособлениями</h3></div>
       </div>
       <div class="video-card">
         <div class="video-embed"><iframe src="https://www.youtube.com/embed/HZacjnjOF6c" title="Охрана труда при работе на высоте" allowfullscreen></iframe></div>
-        <div class="video-info"><h3>Охрана труда при работе на высоте</h3></div>
+        <div class="video-info"><h3 data-i18n="vid2_title">Охрана труда при работе на высоте</h3></div>
       </div>
       <div class="video-card">
         <div class="video-embed"><iframe src="https://www.youtube.com/embed/ZJYRv_DqZbQ" title="Охрана труда при эксплуатации промышленного транспорта" allowfullscreen></iframe></div>
-        <div class="video-info"><h3>Охрана труда при эксплуатации промышленного транспорта</h3></div>
+        <div class="video-info"><h3 data-i18n="vid3_title">Охрана труда при эксплуатации промышленного транспорта</h3></div>
       </div>
       <div class="video-card">
         <div class="video-embed"><iframe src="https://rutube.ru/play/embed/598d78b028397e521f118763e206998c" title="Охрана труда при погрузочно-разгрузочных работах и размещении грузов" allowfullscreen></iframe></div>
-        <div class="video-info"><h3>Охрана труда при погрузочно-разгрузочных работах и размещении грузов</h3></div>
+        <div class="video-info"><h3 data-i18n="vid4_title">Охрана труда при погрузочно-разгрузочных работах и размещении грузов</h3></div>
       </div>
       <div class="video-card">
         <div class="video-embed"><iframe src="https://rutube.ru/play/embed/7f8e39535e4fe47cd40bb421ea6298a0" title="Охрана труда при монтаже и ремонте технологического оборудования" allowfullscreen></iframe></div>
-        <div class="video-info"><h3>Охрана труда при размещении, монтаже, техническом обслуживании и ремонте оборудования</h3></div>
+        <div class="video-info"><h3 data-i18n="vid5_title">Охрана труда при размещении, монтаже, техническом обслуживании и ремонте оборудования</h3></div>
       </div>
       <div class="video-card">
         <div class="video-embed"><iframe src="https://rutube.ru/play/embed/d3694aa5c00084e2ed7dbdc6d3829f1b" title="Охрана труда при выполнении окрасочных работ" allowfullscreen></iframe></div>
-        <div class="video-info"><h3>Охрана труда при выполнении окрасочных работ</h3></div>
+        <div class="video-info"><h3 data-i18n="vid6_title">Охрана труда при выполнении окрасочных работ</h3></div>
       </div>
       <div class="video-card">
         <div class="video-embed"><iframe src="https://rutube.ru/play/embed/6274c42f1af032e79788eb393ae37439" title="Охрана труда при работе в ограниченных и замкнутых пространствах" allowfullscreen></iframe></div>
-        <div class="video-info"><h3>Охрана труда при работе в ограниченных и замкнутых пространствах</h3></div>
+        <div class="video-info"><h3 data-i18n="vid7_title">Охрана труда при работе в ограниченных и замкнутых пространствах</h3></div>
       </div>
       <div class="video-card">
         <div class="video-embed"><iframe src="https://rutube.ru/play/embed/7d997cec727d8e62fa0945d4b146850e" title="Охрана труда при строительстве, реконструкции и ремонте" allowfullscreen></iframe></div>
-        <div class="video-info"><h3>Охрана труда при строительстве, реконструкции и ремонте</h3></div>
+        <div class="video-info"><h3 data-i18n="vid8_title">Охрана труда при строительстве, реконструкции и ремонте</h3></div>
       </div>
       <div class="video-card">
         <div class="video-embed"><iframe src="https://rutube.ru/play/embed/f0be6d04064e18c26a8b37ea409d1118" title="Охрана труда на автомобильном транспорте" allowfullscreen></iframe></div>
-        <div class="video-info"><h3>Охрана труда на автомобильном транспорте</h3></div>
+        <div class="video-info"><h3 data-i18n="vid9_title">Охрана труда на автомобильном транспорте</h3></div>
       </div>
       <div class="video-card">
         <div class="video-embed"><iframe src="https://rutube.ru/play/embed/69428a4931ebc75a64a0ae538d757dff" title="Охрана труда при выполнении электросварочных и газосварочных работ" allowfullscreen></iframe></div>
-        <div class="video-info"><h3>Охрана труда при выполнении электросварочных и газосварочных работ</h3></div>
+        <div class="video-info"><h3 data-i18n="vid10_title">Охрана труда при выполнении электросварочных и газосварочных работ</h3></div>
       </div>
       <div class="video-card">
         <div class="video-embed"><iframe src="https://rutube.ru/play/embed/713324c9d980d69a54adfb6da9acf38a" title="Охрана труда в жилищно-коммунальном хозяйстве" allowfullscreen></iframe></div>
-        <div class="video-info"><h3>Охрана труда в жилищно-коммунальном хозяйстве</h3></div>
+        <div class="video-info"><h3 data-i18n="vid11_title">Охрана труда в жилищно-коммунальном хозяйстве</h3></div>
       </div>
       <div class="video-card">
         <div class="video-embed"><iframe src="https://rutube.ru/play/embed/d10582d09f16e9069a77dd33b5e7eaee" title="Охрана труда в сельском хозяйстве" allowfullscreen></iframe></div>
-        <div class="video-info"><h3>Охрана труда в сельском хозяйстве</h3></div>
+        <div class="video-info"><h3 data-i18n="vid12_title">Охрана труда в сельском хозяйстве</h3></div>
       </div>
     </div>
-    <p class="section-note" style="margin-top:16px;">Казахоязычное видео именно по промышленной технике безопасности с проверенным источником пока не нашлось (мы не публикуем непроверенные ссылки) — вместо этого прямая ссылка на официальный канал Министерства по чрезвычайным ситуациям РК: <a href="https://www.youtube.com/channel/UC9Lk8S70ytRKyV2zahIHUSg" target="_blank">112 KZ на YouTube</a>.</p>
+    <p class="section-note" style="margin-top:16px;"><span data-i18n="res_video_kz_note1">Казахоязычное видео именно по промышленной технике безопасности с проверенным источником пока не нашлось (мы не публикуем непроверенные ссылки) — вместо этого прямая ссылка на официальный канал Министерства по чрезвычайным ситуациям РК:</span> <a href="https://www.youtube.com/channel/UC9Lk8S70ytRKyV2zahIHUSg" target="_blank" data-i18n="res_video_kz_link">112 KZ на YouTube</a>.</p>
   </div>
 
 </main>
 
 <footer>
   <div class="wrap">
-    <p>© Safety Management Solution — Учебный центр промышленной безопасности, охраны труда и пожарной безопасности</p>
+    <p data-i18n="footer_copyright">© Safety Management Solution — Учебный центр промышленной безопасности, охраны труда и пожарной безопасности</p>
     <div class="foot-links">
-      <a href="company.html">Компания</a>
-      <a href="courses.html">Учебный центр</a>
-      <a href="resources.html">Ресурсы</a>
-      <a href="solutions.html">Решения</a>
+      <a href="company.html" data-i18n="nav_company">Компания</a>
+      <a href="courses.html" data-i18n="nav_courses">Учебный центр</a>
+      <a href="resources.html" data-i18n="nav_resources">Ресурсы</a>
+      <a href="solutions.html" data-i18n="nav_solutions">Решения</a>
     </div>
   </div>
 </footer>
