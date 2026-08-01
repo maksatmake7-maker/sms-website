@@ -136,6 +136,23 @@ const SITE_TRANSLATIONS = {
     vid12_title: "Охрана труда в сельском хозяйстве",
     res_video_kz_note1: "Казахоязычное видео именно по промышленной технике безопасности с проверенным источником пока не нашлось (мы не публикуем непроверенные ссылки) — вместо этого прямая ссылка на официальный канал Министерства по чрезвычайным ситуациям РК:",
     res_video_kz_link: "112 KZ на YouTube",
+
+    am_code_title: "Введите код доступа",
+    am_code_placeholder: "Например: A7K2XQ",
+    am_code_submit: "Проверить и открыть тест",
+    am_switch_to_enroll: "Ещё не записаны? Оставить заявку →",
+    am_enroll_title: "Запись на курс",
+    am_name_placeholder: "Ваше имя",
+    am_phone_placeholder: "Телефон",
+    am_enroll_submit: "Отправить заявку",
+    am_switch_to_code: "Уже оплатили? Ввести код →",
+    am_success_title: "Заявка отправлена",
+    am_success_text: "Мы свяжемся с вами по указанному телефону, чтобы согласовать оплату. После оплаты вы получите код доступа к тесту.",
+    am_success_ok: "Понятно",
+    am_err_code_invalid: "Код не найден или доступ ещё не подтверждён.",
+    am_err_network: "Не удалось выполнить запрос — проверьте интернет-соединение и попробуйте снова.",
+    am_err_enroll_required: "Укажите имя и телефон.",
+    am_err_enroll_failed: "Не удалось отправить заявку, попробуйте ещё раз.",
   },
 
   kz: {
@@ -269,6 +286,23 @@ const SITE_TRANSLATIONS = {
     vid12_title: "Ауыл шаруашылығындағы еңбек қауіпсіздігі",
     res_video_kz_note1: "Дәл өнеркәсіптік техника қауіпсіздігі бойынша тексерілген көзі бар қазақ тіліндегі видео әзірге табылмады (біз тексерілмеген сілтемелерді жарияламаймыз) — оның орнына ҚР Төтенше жағдайлар министрлігінің ресми арнасына тікелей сілтеме:",
     res_video_kz_link: "YouTube-тегі 112 KZ",
+
+    am_code_title: "Қолжетімділік кодын енгізіңіз",
+    am_code_placeholder: "Мысалы: A7K2XQ",
+    am_code_submit: "Тексеру және тестті ашу",
+    am_switch_to_enroll: "Әлі жазылған жоқсыз ба? Өтінім қалдыру →",
+    am_enroll_title: "Курсқа жазылу",
+    am_name_placeholder: "Атыңыз",
+    am_phone_placeholder: "Телефон",
+    am_enroll_submit: "Өтінімді жіберу",
+    am_switch_to_code: "Төлем жасадыңыз ба? Кодты енгізу →",
+    am_success_title: "Өтінім жіберілді",
+    am_success_text: "Төлемді келісу үшін көрсетілген телефон нөміріне хабарласамыз. Төлемнен кейін тестке қолжетімділік кодын аласыз.",
+    am_success_ok: "Түсінікті",
+    am_err_code_invalid: "Код табылмады немесе қолжетімділік әлі расталмаған.",
+    am_err_network: "Сұранысты орындау мүмкін болмады — интернет байланысын тексеріп, қайта көріңіз.",
+    am_err_enroll_required: "Атыңыз бен телефоныңызды көрсетіңіз.",
+    am_err_enroll_failed: "Өтінімді жіберу мүмкін болмады, қайта көріңіз.",
   },
 
   en: {
@@ -402,6 +436,23 @@ const SITE_TRANSLATIONS = {
     vid12_title: "Occupational safety in agriculture",
     res_video_kz_note1: "We haven't yet found a Kazakh-language video specifically on industrial safety with a verified source (we don't publish unverified links) — instead, here's a direct link to the official channel of the Ministry of Emergency Situations of the RK:",
     res_video_kz_link: "112 KZ on YouTube",
+
+    am_code_title: "Enter your access code",
+    am_code_placeholder: "e.g. A7K2XQ",
+    am_code_submit: "Verify and open the test",
+    am_switch_to_enroll: "Not enrolled yet? Submit a request →",
+    am_enroll_title: "Course enrollment",
+    am_name_placeholder: "Your name",
+    am_phone_placeholder: "Phone",
+    am_enroll_submit: "Send request",
+    am_switch_to_code: "Already paid? Enter code →",
+    am_success_title: "Request submitted",
+    am_success_text: "We'll contact you at the phone number provided to arrange payment. Once paid, you'll receive an access code for the test.",
+    am_success_ok: "Got it",
+    am_err_code_invalid: "Code not found or access not yet confirmed.",
+    am_err_network: "Couldn't complete the request — check your internet connection and try again.",
+    am_err_enroll_required: "Please enter your name and phone number.",
+    am_err_enroll_failed: "Couldn't send the request, please try again.",
   },
 
   tr: {
@@ -535,6 +586,23 @@ const SITE_TRANSLATIONS = {
     vid12_title: "Tarımda iş güvenliği",
     res_video_kz_note1: "Endüstriyel iş güvenliği konusunda doğrulanmış kaynaklı Kazakça bir video henüz bulunamadı (doğrulanmamış bağlantılar yayınlamıyoruz) — bunun yerine KC Acil Durumlar Bakanlığı'nın resmi kanalına doğrudan bağlantı:",
     res_video_kz_link: "YouTube'da 112 KZ",
+
+    am_code_title: "Erişim kodunu girin",
+    am_code_placeholder: "Örnek: A7K2XQ",
+    am_code_submit: "Doğrula ve sınavı aç",
+    am_switch_to_enroll: "Henüz kayıt olmadınız mı? Başvuru gönderin →",
+    am_enroll_title: "Kursa kayıt",
+    am_name_placeholder: "Adınız",
+    am_phone_placeholder: "Telefon",
+    am_enroll_submit: "Başvuruyu gönder",
+    am_switch_to_code: "Zaten ödediniz mi? Kodu girin →",
+    am_success_title: "Başvuru gönderildi",
+    am_success_text: "Ödemeyi ayarlamak için belirttiğiniz telefon numarasından sizinle iletişime geçeceğiz. Ödemeden sonra sınav için bir erişim kodu alacaksınız.",
+    am_success_ok: "Anladım",
+    am_err_code_invalid: "Kod bulunamadı veya erişim henüz onaylanmadı.",
+    am_err_network: "İstek tamamlanamadı — internet bağlantınızı kontrol edip tekrar deneyin.",
+    am_err_enroll_required: "Lütfen adınızı ve telefon numaranızı girin.",
+    am_err_enroll_failed: "Başvuru gönderilemedi, lütfen tekrar deneyin.",
   },
 
   fr: {
@@ -668,6 +736,23 @@ const SITE_TRANSLATIONS = {
     vid12_title: "Sécurité du travail dans l'agriculture",
     res_video_kz_note1: "Nous n'avons pas encore trouvé de vidéo en kazakh spécifiquement sur la sécurité industrielle avec une source vérifiée (nous ne publions pas de liens non vérifiés) — voici à la place un lien direct vers la chaîne officielle du ministère des Situations d'urgence de la RK :",
     res_video_kz_link: "112 KZ sur YouTube",
+
+    am_code_title: "Entrez votre code d'accès",
+    am_code_placeholder: "Ex. : A7K2XQ",
+    am_code_submit: "Vérifier et ouvrir le test",
+    am_switch_to_enroll: "Pas encore inscrit ? Envoyer une demande →",
+    am_enroll_title: "Inscription au cours",
+    am_name_placeholder: "Votre nom",
+    am_phone_placeholder: "Téléphone",
+    am_enroll_submit: "Envoyer la demande",
+    am_switch_to_code: "Déjà payé ? Entrer le code →",
+    am_success_title: "Demande envoyée",
+    am_success_text: "Nous vous contacterons au numéro indiqué pour organiser le paiement. Une fois le paiement effectué, vous recevrez un code d'accès pour le test.",
+    am_success_ok: "Compris",
+    am_err_code_invalid: "Code introuvable ou accès pas encore confirmé.",
+    am_err_network: "Impossible d'effectuer la demande — vérifiez votre connexion internet et réessayez.",
+    am_err_enroll_required: "Veuillez indiquer votre nom et votre téléphone.",
+    am_err_enroll_failed: "Impossible d'envoyer la demande, veuillez réessayer.",
   },
 
   de: {
@@ -801,6 +886,23 @@ const SITE_TRANSLATIONS = {
     vid12_title: "Arbeitsschutz in der Landwirtschaft",
     res_video_kz_note1: "Ein kasachischsprachiges Video speziell zur industriellen Sicherheit mit verifizierter Quelle wurde bisher nicht gefunden (wir veröffentlichen keine ungeprüften Links) — stattdessen ein direkter Link zum offiziellen Kanal des Ministeriums für Notsituationen der Republik Kasachstan:",
     res_video_kz_link: "112 KZ auf YouTube",
+
+    am_code_title: "Zugangscode eingeben",
+    am_code_placeholder: "z. B. A7K2XQ",
+    am_code_submit: "Prüfen und Test öffnen",
+    am_switch_to_enroll: "Noch nicht angemeldet? Anfrage senden →",
+    am_enroll_title: "Kursanmeldung",
+    am_name_placeholder: "Ihr Name",
+    am_phone_placeholder: "Telefon",
+    am_enroll_submit: "Anfrage senden",
+    am_switch_to_code: "Bereits bezahlt? Code eingeben →",
+    am_success_title: "Anfrage gesendet",
+    am_success_text: "Wir kontaktieren Sie unter der angegebenen Telefonnummer, um die Zahlung zu vereinbaren. Nach der Zahlung erhalten Sie einen Zugangscode für den Test.",
+    am_success_ok: "Verstanden",
+    am_err_code_invalid: "Code nicht gefunden oder Zugang noch nicht bestätigt.",
+    am_err_network: "Anfrage konnte nicht ausgeführt werden — prüfen Sie Ihre Internetverbindung und versuchen Sie es erneut.",
+    am_err_enroll_required: "Bitte geben Sie Namen und Telefonnummer an.",
+    am_err_enroll_failed: "Anfrage konnte nicht gesendet werden, bitte versuchen Sie es erneut.",
   },
 
   uz: {
@@ -934,6 +1036,23 @@ const SITE_TRANSLATIONS = {
     vid12_title: "Qishloq xo'jaligida mehnat xavfsizligi",
     res_video_kz_note1: "Aynan sanoat xavfsizligi texnikasi bo'yicha tekshirilgan manbali qozoq tilidagi video hali topilmadi (biz tekshirilmagan havolalarni nashr etmaymiz) — buning o'rniga QR Favqulodda vaziyatlar vazirligining rasmiy kanaliga to'g'ridan-to'g'ri havola:",
     res_video_kz_link: "YouTube'da 112 KZ",
+
+    am_code_title: "Kirish kodini kiriting",
+    am_code_placeholder: "Masalan: A7K2XQ",
+    am_code_submit: "Tekshirish va testni ochish",
+    am_switch_to_enroll: "Hali yozilmadingizmi? Ariza yuborish →",
+    am_enroll_title: "Kursga yozilish",
+    am_name_placeholder: "Ismingiz",
+    am_phone_placeholder: "Telefon",
+    am_enroll_submit: "Arizani yuborish",
+    am_switch_to_code: "Allaqachon to'ladingizmi? Kodni kiriting →",
+    am_success_title: "Ariza yuborildi",
+    am_success_text: "To'lovni kelishish uchun ko'rsatilgan telefon raqami orqali siz bilan bog'lanamiz. To'lovdan so'ng test uchun kirish kodini olasiz.",
+    am_success_ok: "Tushunarli",
+    am_err_code_invalid: "Kod topilmadi yoki kirish hali tasdiqlanmagan.",
+    am_err_network: "So'rovni bajarib bo'lmadi — internet aloqasini tekshirib, qayta urinib ko'ring.",
+    am_err_enroll_required: "Ism va telefon raqamingizni kiriting.",
+    am_err_enroll_failed: "Arizani yuborib bo'lmadi, qayta urinib ko'ring.",
   },
 
   kg: {
@@ -1067,6 +1186,23 @@ const SITE_TRANSLATIONS = {
     vid12_title: "Айыл чарбасында эмгек коопсуздугу",
     res_video_kz_note1: "Так өнөр жай коопсуздук техникасы боюнча текшерилген булактуу казак тилиндеги видео азырынча табылган жок (биз текшерилбеген шилтемелерди жарыялабайбыз) — анын ордуна КР Өзгөчө кырдаалдар министрлигинин расмий каналына түз шилтеме:",
     res_video_kz_link: "YouTube'дагы 112 KZ",
+
+    am_code_title: "Кирүү кодун киргизиңиз",
+    am_code_placeholder: "Мисалы: A7K2XQ",
+    am_code_submit: "Текшерүү жана тестти ачуу",
+    am_switch_to_enroll: "Азырынча жазылган жоксузбу? Арыз жиберүү →",
+    am_enroll_title: "Курска жазылуу",
+    am_name_placeholder: "Атыңыз",
+    am_phone_placeholder: "Телефон",
+    am_enroll_submit: "Арызды жиберүү",
+    am_switch_to_code: "Төлөп бүттүңүзбү? Кодду киргизүү →",
+    am_success_title: "Арыз жиберилди",
+    am_success_text: "Төлөмдү макулдашуу үчүн көрсөтүлгөн телефон номери боюнча сиз менен байланышабыз. Төлөмдөн кийин тестке кирүү кодун аласыз.",
+    am_success_ok: "Түшүнүктүү",
+    am_err_code_invalid: "Код табылган жок же кирүү азырынча ырасталган жок.",
+    am_err_network: "Сурам аткарылган жок — интернет байланышын текшерип, кайра аракет кылыңыз.",
+    am_err_enroll_required: "Атыңыз менен телефонуңузду көрсөтүңүз.",
+    am_err_enroll_failed: "Арызды жиберүү мүмкүн болгон жок, кайра аракет кылыңыз.",
   },
 
   cn: {
@@ -1200,6 +1336,23 @@ const SITE_TRANSLATIONS = {
     vid12_title: "农业劳动安全",
     res_video_kz_note1: "目前尚未找到具有可靠来源、专门针对工业安全技术的哈萨克语视频（我们不发布未经核实的链接)——因此改为提供哈萨克斯坦共和国紧急情况部官方频道的直接链接：",
     res_video_kz_link: "YouTube上的112 KZ",
+
+    am_code_title: "请输入访问码",
+    am_code_placeholder: "例如：A7K2XQ",
+    am_code_submit: "验证并打开测试",
+    am_switch_to_enroll: "还未报名？提交申请 →",
+    am_enroll_title: "课程报名",
+    am_name_placeholder: "您的姓名",
+    am_phone_placeholder: "电话",
+    am_enroll_submit: "提交申请",
+    am_switch_to_code: "已付款？输入访问码 →",
+    am_success_title: "申请已提交",
+    am_success_text: "我们将通过您提供的电话号码与您联系以安排付款。付款后您将收到测试的访问码。",
+    am_success_ok: "知道了",
+    am_err_code_invalid: "未找到该访问码，或访问尚未确认。",
+    am_err_network: "请求未能完成——请检查网络连接后重试。",
+    am_err_enroll_required: "请填写姓名和电话。",
+    am_err_enroll_failed: "申请提交失败，请重试。",
   },
 };
 
@@ -1208,6 +1361,10 @@ function applyLanguage(lang) {
   document.querySelectorAll('[data-i18n]').forEach((el) => {
     const key = el.getAttribute('data-i18n');
     if (dict[key] !== undefined) el.textContent = dict[key];
+  });
+  document.querySelectorAll('[data-i18n-placeholder]').forEach((el) => {
+    const key = el.getAttribute('data-i18n-placeholder');
+    if (dict[key] !== undefined) el.setAttribute('placeholder', dict[key]);
   });
   document.documentElement.lang = lang;
   localStorage.setItem('sms_site_lang', lang);
