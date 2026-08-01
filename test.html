@@ -36,6 +36,12 @@
   .result-actions a, .result-actions button { font-family: 'Manrope', sans-serif; font-size: 13px; font-weight: 700; padding: 11px 20px; border-radius: 8px; text-decoration: none; border: none; cursor: pointer; }
   .result-actions .btn-primary { background: var(--orange); color: #fff; }
   .result-actions .btn-secondary { background: rgba(255,255,255,0.12); color: #fff; border: 1px solid rgba(255,255,255,0.3); }
+  .gate-card { background: var(--cloud); border: 1px solid var(--line); border-radius: 14px; padding: 40px; text-align: center; }
+  .gate-card h2 { font-size: 18px; margin: 0 0 10px; }
+  .gate-card p { font-size: 14px; color: var(--muted); margin: 0 0 20px; }
+  .gate-card input { width: 100%; max-width: 260px; box-sizing: border-box; padding: 11px 12px; border: 1.5px solid var(--line); border-radius: 8px; font-size: 14px; margin-bottom: 12px; text-align: center; text-transform: uppercase; font-family: inherit; }
+  .gate-card .gate-error { color: var(--pending); font-size: 13px; margin-bottom: 10px; display: none; }
+  .student-tag { font-size: 12.5px; color: var(--muted); margin-bottom: 4px; }
 </style>
 </head>
 <body>
@@ -77,10 +83,14 @@
 
 <script>
 (function () {
+  const BACKEND_URL = 'https://anelina-backend-production.up.railway.app';
   const params = new URLSearchParams(location.search);
   const testId = params.get('id');
-  const lang = (params.get('lang') || 'ru').toLowerCase();
+  let lang = (params.get('lang') || 'ru').toLowerCase();
   const app = document.getElementById('app');
+
+  let studentName = '';
+  let accessCode = '';
 
   function escapeHtml(str) {
     const d = document.createElement('div');
@@ -92,29 +102,90 @@
     app.innerHTML = '<div class="test-state error">' + escapeHtml(msg) + '</div>';
   }
 
-  if (!testId) {
-    renderError('Не указан тест. Вернитесь на страницу курсов и выберите «Пройти тест» ещё раз.');
-    return;
+  function renderGate(errorMsg) {
+    app.innerHTML =
+      '<div class="gate-card">' +
+      '<h2>Нужен код доступа</h2>' +
+      '<p>Тест доступен только после записи на курс и подтверждения оплаты. Если вы уже оплатили — введите код, который вам сообщили.</p>' +
+      '<div class="gate-error" id="gateError">' + (errorMsg ? escapeHtml(errorMsg) : '') + '</div>' +
+      '<input type="text" id="gateCodeInput" placeholder="Например: A7K2XQ" maxlength="6"><br>' +
+      '<button type="button" class="btn btn-blue" id="gateSubmitBtn">Проверить код</button>' +
+      '<p style="margin-top:18px;"><a href="courses.html">← Ещё не записаны? Вернуться к курсам</a></p>' +
+      '</div>';
+    if (errorMsg) document.getElementById('gateError').style.display = 'block';
+    document.getElementById('gateSubmitBtn').addEventListener('click', function () {
+      const code = document.getElementById('gateCodeInput').value.trim().toUpperCase();
+      if (!code) return;
+      verifyAndStart(code);
+    });
   }
 
-  const jsonPath = 'tests/' + testId + '_' + lang + '.json';
+  async function verifyAndStart(code) {
+    try {
+      const res = await fetch(BACKEND_URL + '/access/verify', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ code: code }),
+      });
+      const data = await res.json();
+      if (data.ok) {
+        accessCode = code;
+        studentName = data.name || '';
+        localStorage.setItem('sms_access_code', code);
+        startTest();
+      } else {
+        localStorage.removeItem('sms_access_code');
+        renderGate(data.error || 'Код не найден или доступ ещё не подтверждён.');
+      }
+    } catch (err) {
+      renderGate('Не удалось проверить код — проверьте интернет-соединение и попробуйте снова.');
+    }
+  }
 
-  fetch(jsonPath)
-    .then(function (res) {
-      if (!res.ok) throw new Error('not found');
-      return res.json();
-    })
-    .then(renderTest)
-    .catch(function () {
-      renderError('Тест «' + testId + '» пока не найден на сайте (' + jsonPath + '). Возможно, файл ещё не загружен в папку tests/.');
+  function startTest() {
+    if (!testId) {
+      renderError('Не указан тест. Вернитесь на страницу курсов и выберите «Пройти тест» ещё раз.');
+      return;
+    }
+    app.innerHTML = '<div class="test-state">Загрузка теста…</div>';
+    const jsonPath = 'tests/' + testId + '_' + lang + '.json';
+    fetch(jsonPath)
+      .then(function (res) {
+        if (!res.ok) throw new Error('not found');
+        return res.json();
+      })
+      .then(renderTest)
+      .catch(function () {
+        renderError('Тест «' + testId + '» пока не найден на сайте (' + jsonPath + '). Возможно, файл ещё не загружен в папку tests/.');
+      });
+  }
+
+  // ---------- Точка входа: сначала проверяем код доступа, только потом тест ----------
+  const savedCode = localStorage.getItem('sms_access_code');
+  if (savedCode) {
+    app.innerHTML = '<div class="test-state">Проверка доступа…</div>';
+    verifyAndStart(savedCode);
+  } else {
+    renderGate();
+  }
+
+  function submitResultToBackend(correct, total, grade) {
+    if (!accessCode) return; // на всякий случай — без кода результат никому не привязать
+    fetch(BACKEND_URL + '/submit-result', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ code: accessCode, testId: testId, lang: lang, score: correct, total: total, grade: grade }),
+    }).catch(function () {
+      // Тихо игнорируем — результат уже показан студенту, отправка в реестр не должна ломать интерфейс
     });
+  }
 
   function renderTest(data) {
     const otherLang = lang === 'ru' ? 'kz' : 'ru';
-    const otherLangUrl = '?id=' + encodeURIComponent(testId) + '&lang=' + otherLang;
 
     let html = '';
     html += '<div class="test-head">';
+    if (studentName) html += '<div class="student-tag">Тест проходит: ' + escapeHtml(studentName) + '</div>';
     html += '<h1>' + escapeHtml(data.title) + '</h1>';
     html += '<div class="test-meta">';
     html += '<span>' + data.totalQuestions + ' вопросов</span>';
@@ -210,6 +281,8 @@
       document.getElementById('resultArea').scrollIntoView({ behavior: 'smooth', block: 'center' });
       document.getElementById('submitBtn').disabled = true;
       document.querySelector('.submit-bar').style.display = 'none';
+
+      submitResultToBackend(correct, data.questions.length, grade);
     }
   }
 })();
