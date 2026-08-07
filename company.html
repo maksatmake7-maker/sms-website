@@ -8,6 +8,18 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
+<script src="i18n.js" defer></script>
+<script>
+(function(){
+  try {
+    fetch('https://anelina-backend-production.up.railway.app/track/pageview', {
+      method: 'POST',
+      headers: {'Content-Type':'application/json'},
+      body: JSON.stringify({page: location.pathname})
+    }).catch(function(){});
+  } catch(e) {}
+})();
+</script>
 </head>
 <body>
 
@@ -27,99 +39,110 @@
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18" stroke-linecap="round"/></svg>
     </button>
     <nav class="main-nav">
-      <a href="company.html" class="active">Компания</a>
-      <a href="courses.html">Учебный центр</a>
-      <a href="resources.html">Ресурсы</a>
-      <a href="solutions.html">Решения</a>
-      <a class="nav-cta" href="courses.html">Пройти обучение</a>
+      <a href="company.html" class="active" data-i18n="nav_company">Компания</a>
+      <a href="courses.html" data-i18n="nav_courses">Учебный центр</a>
+      <a href="resources.html" data-i18n="nav_resources">Ресурсы</a>
+      <a href="solutions.html" data-i18n="nav_solutions">Решения</a>
+      <a class="nav-cta" href="courses.html" data-i18n="nav_cta">Пройти обучение</a>
+      <select id="langSwitcher" class="lang-switcher" onchange="applyLanguage(this.value)">
+        <option value="ru">RU</option>
+        <option value="kz">KZ</option>
+        <option value="en">EN</option>
+        <option value="tr">TR</option>
+        <option value="fr">FR</option>
+        <option value="de">DE</option>
+        <option value="uz">UZ</option>
+        <option value="kg">KG</option>
+        <option value="cn">CN</option>
+      </select>
     </nav>
   </div>
 </header>
 
 <section class="page-hero">
   <div class="wrap">
-    <div class="breadcrumb"><a href="index.html">Главная</a> / Компания</div>
-    <h1>Компания</h1>
-    <p>ТОО «Safety Management Solution» — аттестованный учебный центр промышленной безопасности, охраны труда и пожарной безопасности.</p>
+    <div class="breadcrumb"><a href="index.html" data-i18n="breadcrumb_home">Главная</a> / <span data-i18n="nav_company">Компания</span></div>
+    <h1 data-i18n="comp_hero_h1">Компания</h1>
+    <p data-i18n="comp_hero_lede">ТОО «Safety Management Solution» — аттестованный учебный центр промышленной безопасности, охраны труда и пожарной безопасности.</p>
   </div>
 </section>
 
 <main class="wrap">
 
   <div class="content-section">
-    <div class="content-section-head"><h2>О нас</h2></div>
+    <div class="content-section-head"><h2 data-i18n="comp_about_title">О нас</h2></div>
     <div class="placeholder-card" style="border-style:solid;">
-      <p>ТОО «Safety Management Solution» работает с декабря 2012 года.</p>
-      <p>Оказываем услуги по подготовке и переподготовке технических руководителей, специалистов и инженерно-технических работников в области промышленной безопасности, а также проводим экспертизу промышленной безопасности для получения разрешения на применение опасных технических устройств — на основании Аттестата №KZ08VEK00013295 от 15.07.2022, выданного Комитетом промышленной безопасности МЧС РК.</p>
-      <p>Также обучаем руководителей и ответственных лиц по вопросам безопасности и охраны труда, пожарной безопасности (в объёме пожарно-технического минимума), готовим специалистов по приёму, учёту, хранению и использованию прекурсоров и СДЯВ, операторов АЗС и котельных, ответственных за газовое хозяйство, членов согласительных комиссий и пиротехников.</p>
-      <p>Разрабатываем инструкции по охране труда и должностные инструкции, консультируем по разработке деклараций промышленной безопасности опасных производственных объектов.</p>
-      <p>В преподавательском составе — специалисты с большим практическим опытом на различных видах производств.</p>
+      <p data-i18n="comp_about_p1">ТОО «Safety Management Solution» работает с декабря 2012 года.</p>
+      <p data-i18n="comp_about_p2">Оказываем услуги по подготовке и переподготовке технических руководителей, специалистов и инженерно-технических работников в области промышленной безопасности, а также проводим экспертизу промышленной безопасности для получения разрешения на применение опасных технических устройств — на основании Аттестата №KZ08VEK00013295 от 15.07.2022, выданного Комитетом промышленной безопасности МЧС РК.</p>
+      <p data-i18n="comp_about_p3">Также обучаем руководителей и ответственных лиц по вопросам безопасности и охраны труда, пожарной безопасности (в объёме пожарно-технического минимума), готовим специалистов по приёму, учёту, хранению и использованию прекурсоров и СДЯВ, операторов АЗС и котельных, ответственных за газовое хозяйство, членов согласительных комиссий и пиротехников.</p>
+      <p data-i18n="comp_about_p4">Разрабатываем инструкции по охране труда и должностные инструкции, консультируем по разработке деклараций промышленной безопасности опасных производственных объектов.</p>
+      <p data-i18n="comp_about_p5">В преподавательском составе — специалисты с большим практическим опытом на различных видах производств.</p>
       <div class="about-stats">
-        <div class="about-stat"><span class="num">13 лет</span><span class="label">на рынке — компания основана в 2012 году</span></div>
-        <div class="about-stat"><span class="num">29 438</span><span class="label">человек обучено и аттестовано (2012 — июль 2026)</span></div>
-        <div class="about-stat"><span class="num">55</span><span class="label">разработанных деклараций и экспертных заключений</span></div>
+        <div class="about-stat"><span class="num">13 лет</span><span class="label" data-i18n="comp_stat1_label">на рынке — компания основана в 2012 году</span></div>
+        <div class="about-stat"><span class="num">29 438</span><span class="label" data-i18n="comp_stat2_label">человек обучено и аттестовано (2012 — июль 2026)</span></div>
+        <div class="about-stat"><span class="num">55</span><span class="label" data-i18n="comp_stat3_label">разработанных деклараций и экспертных заключений</span></div>
       </div>
     </div>
   </div>
 
   <div class="content-section">
-    <div class="content-section-head"><h2>Отзывы</h2></div>
+    <div class="content-section-head"><h2 data-i18n="comp_testimonials_title">Отзывы</h2></div>
     <div class="placeholder-grid">
       <div class="testimonial-card">
-        <p class="quote">«Я знаком с Компанией "SMS" уже довольно таки давно. И оцениваю весьма положительно профессиональную сторону обучения и оказания экспертных услуг.»</p>
+        <p class="quote" data-i18n="comp_quote1">«Я знаком с Компанией "SMS" уже довольно таки давно. И оцениваю весьма положительно профессиональную сторону обучения и оказания экспертных услуг.»</p>
         <div class="testimonial-author">
           <img class="avatar" src="images/pechenkin.jpg" alt="Дмитрий Печёнкин">
-          <div class="info"><span class="name">Дмитрий Печёнкин</span><span class="role">Директор ТОО «Югтехконтроль»</span></div>
+          <div class="info"><span class="name">Дмитрий Печёнкин</span><span class="role" data-i18n="comp_role1">Директор ТОО «Югтехконтроль»</span></div>
         </div>
       </div>
       <div class="testimonial-card">
-        <p class="quote">«Компания "Safety Management Solution" всегда, как мне помнится, готова провести качественное обучение не только работников опасных объектов, но и руководителей производств и учебных центров.»</p>
+        <p class="quote" data-i18n="comp_quote2">«Компания "Safety Management Solution" всегда, как мне помнится, готова провести качественное обучение не только работников опасных объектов, но и руководителей производств и учебных центров.»</p>
         <div class="testimonial-author">
           <img class="avatar" src="images/ermatov.jpg" alt="Рустам Эрматов">
-          <div class="info"><span class="name">Рустам Эрматов</span><span class="role">Директор ТОО «Sinav»</span></div>
+          <div class="info"><span class="name">Рустам Эрматов</span><span class="role" data-i18n="comp_role2">Директор ТОО «Sinav»</span></div>
         </div>
       </div>
     </div>
   </div>
 
   <div class="content-section">
-    <div class="content-section-head"><h2>Контакты</h2></div>
+    <div class="content-section-head"><h2 data-i18n="comp_contacts_title">Контакты</h2></div>
     <div class="contact-grid">
-      <div class="contact-item"><div class="label">Телефон</div><a href="tel:+77017267046">+7 701 726 70 46</a></div>
-      <div class="contact-item"><div class="label">Email</div><a href="mailto:maksat-shymkent@mail.ru">maksat-shymkent@mail.ru</a></div>
-      <div class="contact-item"><div class="label">Адрес</div><span class="value">г. Шымкент, Енбекшинский р-н, ул. Жандосова 73, БЦ «СОДБИ», каб. 204</span></div>
+      <div class="contact-item"><div class="label" data-i18n="comp_label_phone">Телефон</div><a href="tel:+77017267046">+7 701 726 70 46</a></div>
+      <div class="contact-item"><div class="label" data-i18n="comp_label_email">Email</div><a href="mailto:maksat-shymkent@mail.ru">maksat-shymkent@mail.ru</a></div>
+      <div class="contact-item"><div class="label" data-i18n="comp_label_address">Адрес</div><span class="value">г. Шымкент, Енбекшинский р-н, ул. Жандосова 73, БЦ «СОДБИ», каб. 204</span></div>
     </div>
   </div>
 
   <div class="content-section">
-    <div class="content-section-head"><h2>Реализация</h2></div>
+    <div class="content-section-head"><h2 data-i18n="comp_projects_title">Реализация</h2></div>
     <div class="placeholder-grid">
       <div class="placeholder-card">
-        <span class="tag">Содержание уточняется</span>
-        <h3>Реализованные проекты</h3>
-        <p>Кейсы и примеры выполненных работ — регламенты, декларации, обучение конкретных предприятий.</p>
+        <span class="tag" data-i18n="content_tbd">Содержание уточняется</span>
+        <h3 data-i18n="comp_projects_card_title">Реализованные проекты</h3>
+        <p data-i18n="comp_projects_card_text">Кейсы и примеры выполненных работ — регламенты, декларации, обучение конкретных предприятий.</p>
       </div>
     </div>
   </div>
 
   <div class="content-section">
-    <div class="content-section-head"><h2>Галерея</h2></div>
+    <div class="content-section-head"><h2 data-i18n="comp_gallery_title">Галерея</h2></div>
     <div class="placeholder-grid">
       <div class="placeholder-card">
-        <span class="tag">Содержание уточняется</span>
-        <h3>Фото и видео с объектов и занятий</h3>
-        <p>Пришлите фотографии — сделаю полноценную галерею с сеткой изображений.</p>
+        <span class="tag" data-i18n="content_tbd">Содержание уточняется</span>
+        <h3 data-i18n="comp_gallery_card_title">Фото и видео с объектов и занятий</h3>
+        <p data-i18n="comp_gallery_card_text">Пришлите фотографии — сделаю полноценную галерею с сеткой изображений.</p>
       </div>
     </div>
   </div>
 
   <div class="content-section">
-    <div class="content-section-head"><h2>Наши преподаватели</h2></div>
+    <div class="content-section-head"><h2 data-i18n="comp_teachers_title">Наши преподаватели</h2></div>
     <div class="placeholder-grid">
       <div class="placeholder-card">
-        <span class="tag">Содержание уточняется</span>
-        <h3>Команда преподавателей и экспертов</h3>
-        <p>Фото, имя, специализация каждого преподавателя — пришлите список, оформлю карточками.</p>
+        <span class="tag" data-i18n="content_tbd">Содержание уточняется</span>
+        <h3 data-i18n="comp_teachers_card_title">Команда преподавателей и экспертов</h3>
+        <p data-i18n="comp_teachers_card_text">Фото, имя, специализация каждого преподавателя — пришлите список, оформлю карточками.</p>
       </div>
     </div>
   </div>
@@ -128,12 +151,12 @@
 
 <footer>
   <div class="wrap">
-    <p>© Safety Management Solution — Учебный центр промышленной безопасности, охраны труда и пожарной безопасности</p>
+    <p data-i18n="footer_copyright">© Safety Management Solution — Учебный центр промышленной безопасности, охраны труда и пожарной безопасности</p>
     <div class="foot-links">
-      <a href="company.html">Компания</a>
-      <a href="courses.html">Учебный центр</a>
-      <a href="resources.html">Ресурсы</a>
-      <a href="solutions.html">Решения</a>
+      <a href="company.html" data-i18n="nav_company">Компания</a>
+      <a href="courses.html" data-i18n="nav_courses">Учебный центр</a>
+      <a href="resources.html" data-i18n="nav_resources">Ресурсы</a>
+      <a href="solutions.html" data-i18n="nav_solutions">Решения</a>
     </div>
   </div>
 </footer>
