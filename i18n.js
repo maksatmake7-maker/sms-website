@@ -199,6 +199,7 @@ const SITE_TRANSLATIONS = {
     sol_card_generic_text4: "Описание услуги — пришлите текст.",
     sol_cta_title: "Нужна консультация?",
     sol_cta_text: "Свяжитесь с нами, чтобы обсудить, какое решение подходит именно вашему предприятию.",
+    comp_address_value: "г. Шымкент, Енбекшинский р-н, ул. Жандосова 73, БЦ «СОДБИ», каб. 204",
   },
 
   kz: {
@@ -395,6 +396,7 @@ const SITE_TRANSLATIONS = {
     sol_card_generic_text4: "Қызмет сипаттамасы — мәтін жіберіңіз.",
     sol_cta_title: "Кеңес керек пе?",
     sol_cta_text: "Кәсіпорныңызға дәл қандай шешім сәйкес келетінін талқылау үшін бізбен байланысыңыз.",
+    comp_address_value: "Шымкент қ., Еңбекші ауданы, Жандосов көш., 73, «СОДБИ» БО, 204-бөлме",
   },
 
   en: {
@@ -591,6 +593,7 @@ const SITE_TRANSLATIONS = {
     sol_card_generic_text4: "Service description — please send the text.",
     sol_cta_title: "Need a consultation?",
     sol_cta_text: "Contact us to discuss which solution fits your enterprise best.",
+    comp_address_value: "Shymkent, Yenbekshinsky District, Zhandosov St. 73, SODBI Business Center, Office 204",
   },
 
   tr: {
@@ -787,6 +790,7 @@ const SITE_TRANSLATIONS = {
     sol_card_generic_text4: "Hizmet açıklaması — lütfen metni gönderin.",
     sol_cta_title: "Danışmanlığa mı ihtiyacınız var?",
     sol_cta_text: "İşletmenize hangi çözümün uygun olduğunu görüşmek için bizimle iletişime geçin.",
+    comp_address_value: "Şimkent şehri, Yenbekşinski ilçesi, Jandosov Cad. 73, SODBI İş Merkezi, Ofis 204",
   },
 
   fr: {
@@ -983,6 +987,7 @@ const SITE_TRANSLATIONS = {
     sol_card_generic_text4: "Description du service — merci d'envoyer le texte.",
     sol_cta_title: "Besoin d'une consultation ?",
     sol_cta_text: "Contactez-nous pour discuter de la solution adaptée à votre entreprise.",
+    comp_address_value: "Ville de Chimkent, district de Ienbekchinski, rue Jandossov 73, Centre d'affaires SODBI, bureau 204",
   },
 
   de: {
@@ -1179,6 +1184,7 @@ const SITE_TRANSLATIONS = {
     sol_card_generic_text4: "Leistungsbeschreibung — bitte senden Sie den Text.",
     sol_cta_title: "Brauchen Sie eine Beratung?",
     sol_cta_text: "Kontaktieren Sie uns, um zu besprechen, welche Lösung für Ihr Unternehmen geeignet ist.",
+    comp_address_value: "Stadt Schymkent, Bezirk Jenbekschinski, Schandossow-Str. 73, Geschäftszentrum SODBI, Büro 204",
   },
 
   uz: {
@@ -1375,6 +1381,7 @@ const SITE_TRANSLATIONS = {
     sol_card_generic_text4: "Xizmat tavsifi — matnni yuboring.",
     sol_cta_title: "Konsultatsiya kerakmi?",
     sol_cta_text: "Korxonangizga aynan qaysi yechim mos kelishini muhokama qilish uchun biz bilan bog'laning.",
+    comp_address_value: "Shymkent shahri, Yenbekshi tumani, Jandosov ko'chasi 73, SODBI biznes markazi, 204-xona",
   },
 
   kg: {
@@ -1571,6 +1578,7 @@ const SITE_TRANSLATIONS = {
     sol_card_generic_text4: "Кызматтын сүрөттөлүшү — текст жиберип бериңиз.",
     sol_cta_title: "Консультация керекпи?",
     sol_cta_text: "Ишканаңызга дал кайсы чечим ылайыктуу экенин талкуулоо үчүн биз менен байланышыңыз.",
+    comp_address_value: "Шымкент шаары, Еңбекші району, Жандосов көчөсү 73, «СОДБИ» бизнес-борбору, 204-бөлмө",
   },
 
   cn: {
@@ -1767,6 +1775,7 @@ const SITE_TRANSLATIONS = {
     sol_card_generic_text4: "服务描述——请发送文本。",
     sol_cta_title: "需要咨询吗？",
     sol_cta_text: "请联系我们，讨论哪种解决方案最适合您的企业。",
+    comp_address_value: "希姆肯特市，叶恩别克申区，占多索夫大街73号，SODBI商务中心，204室",
   },
 };
 
