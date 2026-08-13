@@ -94,6 +94,7 @@
         <span class="course-hours" data-i18n="course1_hours">40-часовая программа</span>
         <div class="course-actions">
           <a class="btn btn-blue" href="test.html?id=itr&lang=ru" target="_blank" data-i18n="btn_test" data-course-id="itr" data-course-title-key="course1_title" onclick="return gateTestAccess(event, this)">Пройти тест</a>
+          <a class="btn btn-orange" href="#" data-course-id="itr" data-course-title-key="course1_title" onclick="return openEnrollDirectly(event, this)">Записаться на курс</a>
           <span class="btn btn-disabled" title="Появится, как только пришлёте текст-сценарий для озвучки" data-i18n="btn_listen_pending">Слушать (материал загружается)</span>
         </div>
         <div class="course-materials-list">
@@ -113,6 +114,7 @@
         <span class="course-hours" data-i18n="course2_hours">10-часовая программа</span>
         <div class="course-actions">
           <a class="btn btn-blue" href="test.html?id=rabotniki&lang=ru" target="_blank" data-i18n="btn_test" data-course-id="rabotniki" data-course-title-key="course2_title" onclick="return gateTestAccess(event, this)">Пройти тест</a>
+          <a class="btn btn-orange" href="#" data-course-id="rabotniki" data-course-title-key="course2_title" onclick="return openEnrollDirectly(event, this)">Записаться на курс</a>
           <span class="btn btn-disabled" title="Появится, как только пришлёте текст-сценарий для озвучки" data-i18n="btn_listen_pending">Слушать (материал загружается)</span>
         </div>
         <div class="course-materials-list">
@@ -129,7 +131,7 @@
       <div class="course-card is-ready">
         <span class="status-badge ready" data-i18n="status_ready">Доступно</span>
         <p class="course-title" data-i18n="course3_title">Подготовка и переподготовка ИТР опасных производственных объектов по приёму, учёту, хранению и использованию прекурсоров</p>
-        <div class="course-actions"><a class="btn btn-blue" href="test.html?id=prekursory&lang=ru" target="_blank" data-i18n="btn_test" data-course-id="prekursory" data-course-title-key="course3_title" onclick="return gateTestAccess(event, this)">Пройти тест</a></div>
+        <div class="course-actions"><a class="btn btn-blue" href="test.html?id=prekursory&lang=ru" target="_blank" data-i18n="btn_test" data-course-id="prekursory" data-course-title-key="course3_title" onclick="return gateTestAccess(event, this)">Пройти тест</a> <a class="btn btn-orange" href="#" data-course-id="prekursory" data-course-title-key="course3_title" onclick="return openEnrollDirectly(event, this)">Записаться на курс</a></div>
         <div class="course-materials-list">
           <span data-i18n="materials_label">Материалы:</span>
           <a href="materials/Prekursory%20obshaya-SMS-1-299.pdf" target="_blank" data-i18n="btn_read">Читать</a>
@@ -172,6 +174,7 @@
         <p class="course-title" data-i18n="course7_title">Подготовка работников по вопросам безопасности и охраны труда</p>
         <div class="course-actions">
           <a class="btn btn-blue" href="test.html?id=biot&lang=ru" target="_blank" data-i18n="btn_test" data-course-id="biot" data-course-title-key="course7_title" onclick="return gateTestAccess(event, this)">Пройти тест</a>
+          <a class="btn btn-orange" href="#" data-course-id="biot" data-course-title-key="course7_title" onclick="return openEnrollDirectly(event, this)">Записаться на курс</a>
           <a class="btn btn-ghost" href="materials/Ohrana%20truda-SMS.pdf" target="_blank" data-i18n="btn_read">Читать</a>
           <span class="btn btn-disabled" title="Появится, как только пришлёте текст-сценарий для озвучки" data-i18n="btn_listen_pending">Слушать (материал загружается)</span>
         </div>
@@ -200,6 +203,7 @@
         <p class="course-title" data-i18n="course9_title">Подготовка руководителей и ответственных лиц по пожарной безопасности в объёме пожарно-технического минимума</p>
         <div class="course-actions">
           <a class="btn btn-blue" href="test.html?id=ptm&lang=ru" target="_blank" data-i18n="btn_test" data-course-id="ptm" data-course-title-key="course9_title" onclick="return gateTestAccess(event, this)">Пройти тест</a>
+          <a class="btn btn-orange" href="#" data-course-id="ptm" data-course-title-key="course9_title" onclick="return openEnrollDirectly(event, this)">Записаться на курс</a>
           <a class="btn btn-ghost" href="materials/Ucebnoe-posobie-PTM-SMS-rus.pdf" target="_blank" data-i18n="btn_read">Читать</a>
           <span class="btn btn-disabled" title="Появится, как только пришлёте текст-сценарий для озвучки" data-i18n="btn_listen_pending">Слушать (материал загружается)</span>
         </div>
@@ -422,6 +426,16 @@
     } else {
       openAccessModal('code');
     }
+    return false;
+  };
+
+  // Прямая запись на курс — не требует сначала нажимать "Пройти тест",
+  // открывает форму заявки сразу
+  window.openEnrollDirectly = function (event, linkEl) {
+    event.preventDefault();
+    pendingCourseId = linkEl.getAttribute('data-course-id') || '';
+    pendingCourseTitleKey = linkEl.getAttribute('data-course-title-key') || '';
+    openAccessModal('enroll');
     return false;
   };
 
