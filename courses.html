@@ -365,8 +365,20 @@
       <h3 data-i18n="am_enroll_title">Запись на курс</h3>
       <p class="am-course" id="amCourseLabelEnroll"></p>
       <div class="am-error" id="amEnrollError" style="display:none;"></div>
+
+      <div class="am-client-type" style="display:flex; gap:8px; margin-bottom:12px;">
+        <button type="button" id="amTypeIndividual" class="am-type-btn am-type-active" onclick="setClientType('физлицо')" style="flex:1; padding:10px; border-radius:8px; border:1px solid #ddd; background:#1e30d8; color:#fff; cursor:pointer;">Частное лицо</button>
+        <button type="button" id="amTypeLegal" class="am-type-btn" onclick="setClientType('юрлицо')" style="flex:1; padding:10px; border-radius:8px; border:1px solid #ddd; background:#fff; color:#333; cursor:pointer;">Организация</button>
+      </div>
+
       <input type="text" id="amNameInput" data-i18n-placeholder="am_name_placeholder" placeholder="Ваше имя">
       <input type="tel" id="amPhoneInput" data-i18n-placeholder="am_phone_placeholder" placeholder="Телефон">
+
+      <div id="amLegalFields" style="display:none;">
+        <input type="text" id="amCompanyInput" placeholder="Название организации">
+        <input type="text" id="amBinInput" placeholder="БИН организации" maxlength="12">
+      </div>
+
       <button class="am-primary" data-i18n="am_enroll_submit" onclick="submitEnrollment()">Отправить заявку</button>
       <button class="am-switch" data-i18n="am_switch_to_code" onclick="switchAccessView('code')">Уже оплатили? Ввести код →</button>
     </div>
@@ -375,7 +387,7 @@
       <div class="am-success">
         <div class="am-check">✅</div>
         <h3 data-i18n="am_success_title">Заявка отправлена</h3>
-        <p class="am-course" data-i18n="am_success_text">Мы свяжемся с вами по указанному телефону, чтобы согласовать оплату. После оплаты вы получите код доступа к тесту.</p>
+        <p class="am-course" id="amSuccessText">Мы свяжемся с вами по указанному телефону, чтобы согласовать оплату. После оплаты вы получите код доступа к тесту.</p>
         <button class="am-primary" data-i18n="am_success_ok" onclick="closeAccessModal()">Понятно</button>
       </div>
     </div>
@@ -479,9 +491,23 @@
     }
   };
 
+  let currentClientType = 'физлицо';
+  window.setClientType = function (type) {
+    currentClientType = type;
+    document.getElementById('amTypeIndividual').classList.toggle('am-type-active', type === 'физлицо');
+    document.getElementById('amTypeIndividual').style.background = type === 'физлицо' ? '#1e30d8' : '#fff';
+    document.getElementById('amTypeIndividual').style.color = type === 'физлицо' ? '#fff' : '#333';
+    document.getElementById('amTypeLegal').classList.toggle('am-type-active', type === 'юрлицо');
+    document.getElementById('amTypeLegal').style.background = type === 'юрлицо' ? '#1e30d8' : '#fff';
+    document.getElementById('amTypeLegal').style.color = type === 'юрлицо' ? '#fff' : '#333';
+    document.getElementById('amLegalFields').style.display = type === 'юрлицо' ? 'block' : 'none';
+  };
+
   window.submitEnrollment = async function () {
     const name = document.getElementById('amNameInput').value.trim();
     const phone = document.getElementById('amPhoneInput').value.trim();
+    const companyName = document.getElementById('amCompanyInput').value.trim();
+    const bin = document.getElementById('amBinInput').value.trim();
     const errEl = document.getElementById('amEnrollError');
     errEl.style.display = 'none';
     if (!name || !phone) {
@@ -489,16 +515,32 @@
       errEl.style.display = 'block';
       return;
     }
+    if (currentClientType === 'юрлицо' && (!companyName || !bin)) {
+      errEl.textContent = 'Укажите название организации и БИН.';
+      errEl.style.display = 'block';
+      return;
+    }
     try {
       const res = await fetch(BACKEND_URL + '/enroll', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, phone, courseId: pendingCourseId, courseTitle: t(pendingCourseTitleKey, '') }),
+        body: JSON.stringify({
+          name, phone,
+          courseId: pendingCourseId,
+          courseTitle: t(pendingCourseTitleKey, ''),
+          clientType: currentClientType,
+          companyName: currentClientType === 'юрлицо' ? companyName : '',
+          bin: currentClientType === 'юрлицо' ? bin : '',
+        }),
       });
       const data = await res.json();
       if (data.ok) {
         document.getElementById('amViewEnroll').style.display = 'none';
         document.getElementById('amViewSuccess').style.display = 'block';
+        const successText = document.getElementById('amSuccessText');
+        successText.textContent = currentClientType === 'юрлицо'
+          ? 'Заявка принята. Мы подготовим договор и счёт на оплату и свяжемся с вами по указанному телефону.'
+          : 'Заявка отправлена. Мы свяжемся с вами по указанному телефону, чтобы согласовать оплату. После оплаты вы получите код доступа к тесту.';
       } else {
         errEl.textContent = t('am_err_enroll_failed', 'Не удалось отправить заявку, попробуйте ещё раз.');
         errEl.style.display = 'block';
